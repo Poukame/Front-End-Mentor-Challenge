@@ -2,17 +2,16 @@
 # Project Title
 
 A listing of my challenge from Front-End Mentor.
+I try to practice what I learn as much as I can in order to consolidate my knowledge.
 
+## Challenges
 
-## Projects
+Use **ctrl + click** to open in a new tab.
 
-- 01 : [expenses chart](https://cosmic-donut-fbde9c.netlify.app/)
-- 02 : [expenses chart](https://cosmic-donut-fbde9c.netlify.app/)
+- 01 : [nft preview card](https://musical-cannoli-ddb75b.netlify.app/)
+- 02 : [Interactive Rating Component](https://relaxed-meerkat-1c08eb.netlify.app/)
 - 03 : [expenses chart](https://cosmic-donut-fbde9c.netlify.app/)
 
 
 
-## Lessons Learned
-
-What did you learn while building this project? What challenges did you face and how did you overcome them?
 
