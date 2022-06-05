@@ -60,6 +60,7 @@ body {
     opacity: 0;
     top:25%;
     left:25%;
+   
 }
 
 .image-container {
@@ -68,6 +69,7 @@ body {
 
 .image-container:hover .nft-image {
     opacity: 0.3;
+    
   }
   
 .image-container:hover .overlay {
