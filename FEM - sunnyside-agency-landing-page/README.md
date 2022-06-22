@@ -27,7 +27,7 @@ Users should be able to:
 
 ![Screenshot Desktop](./images/screenshot/desktop-screenshot.webp)
 ![Screenshot Mobile](./images/screenshot/mobile-screenshot.webp)
-![Gif](./images/screenshot/gif.webpwebp)
+![Gif](./images/screenshot/gif.webp)
 
 ### Links
 
