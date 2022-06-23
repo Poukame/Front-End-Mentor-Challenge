@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Repository: [GitHub](https://cosmic-donut-fbde9c.netlify.app/)
-- Live Site URL: [My live site of the challenge](https://cosmic-donut-fbde9c.netlify.app/)
+- Repository: [GitHub](https://github.com/Poukame/ALL-my-Front-End-Mentor-Challenge/tree/main/FEM%20-%20advice-generator-app-main)
+- Live Site URL: [My live site of the challenge](https://fem-advice-gen.netlify.app/)
 
 ## My process
 
