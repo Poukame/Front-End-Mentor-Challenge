@@ -90,11 +90,11 @@ TYPOGRAPHY
 
 .card-title {
 	font-weight: var(--fw-med);
-	font-size: 1.125rem;
+	font-size: 1rem;
 }
 
 .card-current {
-	font-size: 1.7rem;
+	font-size: 1.8rem;
 	font-weight: var(--fw-light);
 }
 
@@ -102,6 +102,7 @@ TYPOGRAPHY
  {
 	color: var(--clr-neutral-pale-blue);
 	font-weight: var(--fw-med);	
+	font-size: .8rem;
 }
 
 .card p {
@@ -117,16 +118,22 @@ main {
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
-	align-items: start;
+	align-items: center;
 	padding-top: 1em;
 }
 
 .container {
 	width: 90%;
 	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: auto;
+	grid-template-columns: auto;
+	/* grid-template-rows: auto; */
 	gap: 1.5em;
+}
+
+.card-boxes {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 1em;
 }
 
 .user-card {
@@ -175,18 +182,130 @@ main {
 
 .dots {
 	max-width: 25px;
+	grid-row: 1 / 2;
+	grid-column: 2 / 3;
+	align-self: end;
+	justify-self: right;
+	margin-bottom: 5px;
 }
 
 .icon {
+	position: absolute;
+	right: 0;
+	top:-10px;
 	max-width: 80px;
 }
 
-.card-work {
-	background-color: var(--clr-red-work);
+.card {
 	border-radius : var(--br-border-radius);
 }
 
+.wrap-work {
+	background-color: var(--clr-red-work);
+}
+
+.wrap-play {
+	background-color: var(--clr-blue-play);
+}
+
+.wrap-study {
+	background-color: var(--clr-red-study);
+}
+
+.wrap-exercise {
+	background-color: var(--clr-green-exercice);
+}
+
+.wrap-social {
+	background-color: var(--clr-violet-social);
+}
+
+.wrap-care {
+	background-color: var(--clr-orange-care);
+}
+
+.card-wrapper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	border-radius: var(--br-border-radius);
+	overflow: hidden;
+	min-height: 160px;
+}
+
 .inner-wrapper {
+	position: relative;
+	z-index: 2;
 	background-color: var(--clr-neutral-very-dark-blue);
 	border-radius: var(--br-border-radius) var(--br-border-radius) 0 0;
+	min-height:120px;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	grid-template-rows: 1fr 1fr;
+	gap: .2em;
+	padding: 1em;
+	align-items: center;
+}
+
+.card-title {
+	align-self: end;
+}
+
+.card-past {
+	justify-self: end;
+	text-align: right;
+}
+
+.card-current {
+	justify-self: start;
+	align-self: top;
+}
+
+
+@media (min-width:900px) {
+	.container {
+		max-width: 800px;
+		height: 50vh;
+		gap: 1.5em;
+		display: grid;
+		grid-template-columns: 25% 75%;
+		grid-template-rows: 1fr;
+	}
+
+	.card-boxes {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-areas:
+		"work 		play 	study"
+		"exercise	social 	care";
+	}
+
+	.user-card {
+		grid-template-columns: 1 / 2;
+	}
+
+	.wrap-work {
+		grid-area: work;
+	}
+	
+	.wrap-play {
+		grid-area: play;
+	}
+	
+	.wrap-study {
+		grid-area: study;
+	}
+	
+	.wrap-exercise {
+		grid-area: exercise;
+	}
+	
+	.wrap-social {
+		grid-area: social;
+	}
+	
+	.wrap-care {
+		grid-area: care;
+	}
 }
