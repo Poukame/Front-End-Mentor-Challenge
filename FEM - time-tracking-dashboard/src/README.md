@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Repository: [GitHub](https://github.com/Poukame/ALL-my-Front-End-Mentor-Challenge/tree/main/FEM%20-%20advice-generator-app-main)
-- Live Site URL: [My live site of the challenge](https://fem-advice-gen.netlify.app/)
+- Repository: [GitHub](https://github.com/Poukame/ALL-my-Front-End-Mentor-Challenge/tree/main/FEM%20-%20time-tracking-dashboard)
+- Live Site URL: [My live site of the challenge](https://luxury-sopapillas-e6453e.netlify.app/)
 
 ## My process
 
