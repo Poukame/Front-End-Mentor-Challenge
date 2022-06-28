@@ -1,7 +1,7 @@
 import React from 'react';
 import portrait from '../images/image-jeremy.png';
 
-export default function User() {
+export default function User(props) {
 	return (
 		<div className='user-card'>
 			<div className='user__details'>
@@ -11,9 +11,11 @@ export default function User() {
 			</div>
 
 			<div className='user__option'>
-				<p>Daily</p>
-				<p>Weekly</p>
-				<p>Monthly</p>
+				<ul>
+					<li><a href='#' onClick={props.getTime}>Daily</a></li>
+					<li><a href='#' onClick={props.getTime}>Weekly</a></li>
+					<li><a href='#' onClick={props.getTime}>Monthly</a></li>
+				</ul>
 			</div>
 		</div>
 	);
