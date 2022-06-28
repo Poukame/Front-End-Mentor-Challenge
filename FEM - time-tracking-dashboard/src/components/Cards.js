@@ -6,49 +6,42 @@ import iconstudy from '../images/icon-study.svg';
 import iconexercise from '../images/icon-exercise.svg';
 import iconsocial from '../images/icon-social.svg';
 import iconcare from '../images/icon-self-care.svg';
-import data from '../data.json'
+import data from '../data.json';
 
 export default function Cards(props) {
-
 	const cards = data.map((item, index) => {
-        return (
-            <CardData
-                key = {item.index}
-				timeChoice = {props.timeChoice.toLowerCase()}
-                {...item}
-            />
-        )
-    })
+		return <CardData key={item.index} timeChoice={props.timeChoice.toLowerCase()} {...item} />;
+	});
 
 	return (
 		<div className='card-boxes'>
-			<div className='card-wrapper wrap-work'>
-				<img className='icon' src={iconwork} alt=''/>
+			<div className='card-wrapper wrap-work' tabindex='0'>
+				<img className='icon' src={iconwork} alt='' />
 				{cards[0]}
 			</div>
 
-			<div className='card-wrapper wrap-play'>
-				<img className='icon' src={iconplay} alt=''/>
+			<div className='card-wrapper wrap-play' tabindex='0'>
+				<img className='icon' src={iconplay} alt='' />
 				{cards[1]}
 			</div>
 
-			<div className='card-wrapper wrap-study'>
-				<img className='icon' src={iconstudy} alt=''/>
+			<div className='card-wrapper wrap-study' tabindex='0'>
+				<img className='icon' src={iconstudy} alt='' />
 				{cards[2]}
 			</div>
 
-			<div className='card-wrapper wrap-exercise'>
-				<img className='icon' src={iconexercise} alt=''/>
+			<div className='card-wrapper wrap-exercise' tabindex='0'>
+				<img className='icon' src={iconexercise} alt='' />
 				{cards[3]}
 			</div>
 
-			<div className='card-wrapper wrap-social'>
-				<img className='icon' src={iconsocial} alt=''/>
+			<div className='card-wrapper wrap-social' tabindex='0'>
+				<img className='icon' src={iconsocial} alt='' />
 				{cards[4]}
 			</div>
 
-			<div className='card-wrapper wrap-care'>
-				<img className='icon' src={iconcare} alt=''/>
+			<div className='card-wrapper wrap-care' tabindex='0'>
+				<img className='icon' src={iconcare} alt='' />
 				{cards[5]}
 			</div>
 		</div>

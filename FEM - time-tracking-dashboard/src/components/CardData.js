@@ -1,27 +1,23 @@
 import React from 'react';
 import dots from '../images/icon-ellipsis.svg';
 
-
 export default function CardData(props) {
-	
 	switch (props.timeChoice) {
 		case 'daily':
-		  current = props.timeframes.daily.current;
-		  previous = props.timeframes.daily.previous;
-		  break;
+			current = props.timeframes.daily.current;
+			previous = props.timeframes.daily.previous;
+			break;
 		case 'weekly':
 			current = props.timeframes.weekly.current;
 			previous = props.timeframes.weekly.previous;
-		  break;
+			break;
 		case 'monthly':
 			current = props.timeframes.monthly.current;
 			previous = props.timeframes.monthly.previous;
-		  break;
-	  }
-
+			break;
+	}
 
 	return (
-        
 		<div className='card'>
 			<div className='inner-wrapper'>
 				<img className='dots' src={dots} alt='' />
@@ -30,6 +26,5 @@ export default function CardData(props) {
 				<p className='card-past'>Last Week - {previous} hrs</p>
 			</div>
 		</div>
-        
 	);
 }

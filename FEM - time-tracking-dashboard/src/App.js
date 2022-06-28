@@ -11,13 +11,9 @@ export function App() {
 
 	return (
 		<div className='container'>
-			<User
-			getTime={getTime}
-			 />
+			<User getTime={getTime} />
 
-			<Cards
-			timeChoice = {timeChoice}
-			 />
+			<Cards timeChoice={timeChoice} />
 		</div>
 	);
 }
