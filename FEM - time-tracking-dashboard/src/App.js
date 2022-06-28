@@ -1,9 +1,9 @@
 import React from 'react';
 import User from './components/User';
-import Card from './components/Cards';
+import Cards from './components/Cards';
 
 export function App() {
-	const [timeChoice, setTimeChoice] = React.useState('Daily');
+	const [timeChoice, setTimeChoice] = React.useState('daily');
 
 	function getTime(event) {
 		setTimeChoice(event.target.innerHTML);
@@ -14,8 +14,8 @@ export function App() {
 			<User
 			getTime={getTime}
 			 />
-			 
-			<Card
+
+			<Cards
 			timeChoice = {timeChoice}
 			 />
 		</div>
