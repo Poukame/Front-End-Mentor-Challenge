@@ -121,12 +121,51 @@ nav li {
   list-style: none;
 }
 
-.hero__btn {
+.btn {
   border: none;
   background-color: var(--clr-cyan);
   color: #fff;
   font-weight: var(--fw-bold);
   padding: 0.9em 3em;
   border-radius: 200px;
+  cursor: pointer;
 }
+
+.shortener {
+  margin: 4em 0;
+}
+
+.shorten-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .7em;
+  padding: 1em;
+  border-radius: .5em;
+  background-color: var(--clr-dark-violet);
+  background-image: url('../src/images/bg-shorten-mobile.svg');
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size:contain;
+}
+
+.shorten__input,
+.btn--short {
+  line-height: 2rem;
+  min-height: 2rem;
+  border-radius: .5em;
+  border: none;
+}
+
+.shorten__input {
+  padding: .5em;
+  text-indent: .8em;
+  color: var(--clr-gray);
+  font-weight: var(--fw-reg);
+}
+
+.btn--short {
+  padding: .5em 1em;
+  
+}
+
 
