@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Shortener from './components/Shortener';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 
 function App() {
 	return (
@@ -11,11 +11,11 @@ function App() {
 			<Header />
 			<main>
 				<Hero />
-        <Shortener />
-        <Features />
-        <Cta />
+				<Shortener />
+				<Features />
+				<Cta />
 			</main>
-      <Footer />
+			<Footer />
 		</>
 	);
 }
