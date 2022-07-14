@@ -110,6 +110,23 @@ header,
 	font-weight: var(--fw-bold);
 }
 
+.btn--shortlink {
+	font-weight: var(--fw-bold);
+	font-size: 1.1rem;
+}
+
+.shortlink-wrapper {
+	text-align: left;
+}
+
+.longlink {
+	color:var(--clr-grayish-violet)
+}
+
+.shortlink {
+	color:var(--clr-cyan)
+}
+
 /*****************
   LAYOUT
 *****************/
@@ -197,6 +214,7 @@ header {
 .hero {
 	display: flex;
 	flex-direction: column;
+	margin-bottom: 5em;
 }
 
 .btn {
@@ -215,7 +233,11 @@ header {
 }
 
 .shortener {
-	margin: 4em 0;
+	position: absolute;
+	transform: translateY(-50%);
+	top:0;
+	left: 0;
+	right: 0;
 }
 
 .shorten-wrapper {
@@ -250,9 +272,43 @@ header {
 	padding: 0.5em 1em;
 }
 
+.shortlink-wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: .5em;
+	padding: 1em;
+	background-color: #fff;
+	margin-bottom: var(--pad-global);
+	border-radius: .4em;
+}
+
+.longlink,
+.shortlink {
+	padding-block: 0.5em;
+}
+
+.longlink {
+	border-bottom: var(--clr-gray) solid 0.5px; 
+}
+
+.btn--shortlink {
+	width: 100%;
+	border-radius: .4em;
+}
+
+.shortlink-container {
+	position: relative;
+	top:80px;
+}
+
 .feature {
+	position: relative;
 	background-color: hsl(230, 25%, 95%);
 	padding: var(--pad-global);
+}
+
+.feature-head {
+	margin-top: 7em;
 }
 
 .feature__item {
@@ -384,8 +440,36 @@ footer {
 		gap: 1em;
 		justify-content: center;
 		grid-template-areas:
+			'link link link'
 			'title title title'
 			'brand detail custom';
+	}
+
+	.shortlink-container {
+		grid-area: link;
+		width: 100%;
+		top: 60px;
+	}
+
+	.longlink {
+		flex: 1 1 50%;
+		border: none;
+	}
+
+	.shortlink {
+		flex: 1 1 30%;
+		text-align: right;
+	}
+
+	.btn--shortlink {
+		flex: 1 1 10%;
+	}
+
+	.shortlink-wrapper {
+		flex-direction: row;
+		align-items: baseline;	
+		justify-content: space-between;	
+		gap: 1.5em;
 	}
 
 	.feature-head {
@@ -476,5 +560,28 @@ footer {
 
 	.desktop_nav--ul li:last-child a {
 		color: #fff;
+	}
+
+	.shortener {
+		max-width: var(--max-width);
+		margin: 0 auto;
+	}
+
+	.shorten-wrapper {
+		flex-direction: row;
+		background-image: url('../src/images/bg-shorten-desktop.svg');
+		background-position: left;
+		background-repeat: no-repeat;
+		background-size: cover;
+		padding: var(--pad-global);
+	}
+
+	.shorten__input {
+		width: 70%;
+		flex: 1 0 auto;
+	}
+
+	.btn--short {
+		flex: 1 0 auto;
 	}
 }

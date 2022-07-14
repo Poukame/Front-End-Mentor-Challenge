@@ -19,7 +19,6 @@ function App() {
 			/>
 			<main>
 				<Hero />
-				<Shortener />
 				<Features />
 				<Cta />
 			</main>

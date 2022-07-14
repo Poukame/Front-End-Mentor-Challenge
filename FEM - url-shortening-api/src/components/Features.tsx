@@ -1,10 +1,12 @@
 import brandIco from '../images/icon-brand-recognition.svg'
 import detailledIco from '../images/icon-detailed-records.svg'
 import fullCusIco from '../images/icon-fully-customizable.svg'
+import Shortener from './Shortener';
 
 export default function Features() {
 	return (
 		<section className='feature'>
+			<Shortener />
 			<div className='feature-head'>
 				<h2 className='feature__title'>Advanced Statistics</h2>
 				<p className='feature__body'>
