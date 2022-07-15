@@ -240,7 +240,7 @@ header {
 	right: 0;
 }
 
-.shorten-wrapper {
+.shorten-wrapper form {
 	display: flex;
 	flex-direction: column;
 	gap: 0.7em;
@@ -567,7 +567,7 @@ footer {
 		margin: 0 auto;
 	}
 
-	.shorten-wrapper {
+	.shorten-wrapper form {
 		flex-direction: row;
 		background-image: url('../src/images/bg-shorten-desktop.svg');
 		background-position: left;

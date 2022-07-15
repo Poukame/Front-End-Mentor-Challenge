@@ -8,17 +8,28 @@ function ShortLink() {
 	);
 }
 
-export default function Shortener() {
+export default function Shortener({ onSubmit, onChange, value, shortLink }) {
 	return (
 		<>
 			<section className='shortener'>
 				<div className='shorten-wrapper'>
-					<input className='shorten__input' placeholder='Shorten a link here...'></input>
-					<button className='btn btn--short'>Shorten it!</button>
+					<form onSubmit={onSubmit}>
+						<input
+							onChange={onChange}
+							value={value}
+							name='longurl'
+							className='shorten__input'
+							type='url'
+							required
+							placeholder='Shorten a link here...'
+						></input>
+						<button className='btn btn--short'>Shorten it!</button>
+					</form>
 				</div>
 			</section>
 			<div className='shortlink-container'>
 				<ShortLink />
+				{shortLink}
 				<ShortLink />
 			</div>
 		</>
