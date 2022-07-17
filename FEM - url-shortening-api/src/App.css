@@ -285,6 +285,7 @@ header {
 .longlink,
 .shortlink {
 	padding-block: 0.5em;
+	overflow: clip;
 }
 
 .longlink {
@@ -416,7 +417,7 @@ footer {
   MEDIA QUERIES
 *****************/
 
-@media (min-width: 48em) {
+@media (min-width: 63em) {
 	.hero {
 		flex-direction: row-reverse;
 		gap: 1em;
@@ -436,7 +437,7 @@ footer {
 
 	.feature {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, calc((var(--max-width) / 3))));
+		grid-template-columns: repeat(auto-fit, minmax(300px, calc((var(--max-width) / 3))));
 		gap: 1em;
 		justify-content: center;
 		grid-template-areas:
@@ -454,6 +455,7 @@ footer {
 	.longlink {
 		flex: 1 1 50%;
 		border: none;
+
 	}
 
 	.shortlink {
