@@ -1,14 +1,8 @@
-function ShortLink() {
-	return (
-		<div className='shortlink-wrapper'>
-			<div className='longlink'>https://beta.reactjs.org/learn/describing-the-ui</div>
-			<div className='shortlink'>https://www.goo.gl</div>
-			<button className='btn btn--shortlink'>Copy</button>
-		</div>
-	);
-}
 
-export default function Shortener({ onSubmit, onChange, value, shortLink }) {
+export default function Shortener({ onSubmit, onChange, value, savedLinks }) {
+	
+	console.log('shortener saved links', savedLinks)
+	
 	return (
 		<>
 			<section className='shortener'>
@@ -28,9 +22,7 @@ export default function Shortener({ onSubmit, onChange, value, shortLink }) {
 				</div>
 			</section>
 			<div className='shortlink-container'>
-				<ShortLink />
-				{shortLink}
-				<ShortLink />
+				{savedLinks}
 			</div>
 		</>
 	);
