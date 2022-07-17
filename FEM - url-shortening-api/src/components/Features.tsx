@@ -15,7 +15,6 @@ export default function Features({ onSubmit, onChange, value, savedLinks }) {
 				onSubmit={onSubmit}
 				onChange={onChange}
 				value={value}
-				//shortLink={linkData}
 				savedLinks={savedLinks}
 			/>
 

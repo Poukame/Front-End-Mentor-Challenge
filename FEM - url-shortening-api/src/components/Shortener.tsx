@@ -1,8 +1,6 @@
 
 export default function Shortener({ onSubmit, onChange, value, savedLinks }) {
 	
-	console.log('shortener saved links', savedLinks)
-	
 	return (
 		<>
 			<section className='shortener'>

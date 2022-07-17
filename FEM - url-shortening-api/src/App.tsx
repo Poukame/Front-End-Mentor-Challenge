@@ -5,18 +5,15 @@ import Hero from './components/Hero';
 import Footer from './components/Footer';
 import Features from './components/Features';
 import Cta from './components/Cta';
-import { nanoid } from 'nanoid'
-
-
+import { nanoid } from 'nanoid';
 
 function App() {
-
 	const [display, setDisplay] = useState(false);
 	const [linkData, setLinkData] = useState([]);
 	const [inputURL, setInputURL] = useState('');
 	const [submit, setSubmitStatus] = useState(true);
-	let savedLinks
-	
+	const [savedLinks, setSavedLinks] = useState('');
+
 	function handleInputChange(e: React.FormEvent<HTMLInputElement>) {
 		setInputURL(e.target.value);
 	}
@@ -38,11 +35,24 @@ function App() {
 							longLink: data.result.original_link,
 							shortLink: data.result.full_short_link,
 						});
-						renderLinks()
+						console.log('linkdata',linkData)
+						return prevLinkData;
 					});
-					
-					console.log('triggered 1')
-					console.log(linkData);
+
+					setSavedLinks(
+						linkData.map((el) => {
+							return (
+								<div className='shortlink-wrapper' id={(el.id = nanoid())}>
+									<div className='longlink'>{el.longLink}</div>
+									<div className='shortlink'>{el.shortLink}</div>
+									<button className='btn btn--shortlink'>Copy</button>
+								</div>
+							);
+						})
+					);
+					console.log('savelinks', linkData)
+					return savedLinks;
+
 				} catch (err) {
 					console.log(err);
 				}
@@ -51,35 +61,31 @@ function App() {
 		getShortLink(inputURL);
 	}, [submit]);
 
-		function renderLinks() {
-			savedLinks = linkData.map((el) => {
-				return (
-					<div className='shortlink-wrapper' id={el.id=nanoid()}>
-						<div className='longlink'>{el.longLink}</div>
-						<div className='shortlink'>{el.shortLink}</div>
-						<button className='btn btn--shortlink'>Copy</button>
-					</div>
-				);
-			});
-			console.log('savedlinks', savedLinks)
-			console.log('triggered 2')
-			return savedLinks
-		}
+	// function renderLinks() {
+	// 	savedLinks = linkData.map((el) => {
+	// 		return (
+	// 			<div className='shortlink-wrapper' id={el.id=nanoid()}>
+	// 				<div className='longlink'>{el.longLink}</div>
+	// 				<div className='shortlink'>{el.shortLink}</div>
+	// 				<button className='btn btn--shortlink'>Copy</button>
+	// 			</div>
+	// 		);
+	// 	});
+	// 	console.log('savedlinks', savedLinks)
+	// 	console.log('triggered 2')
+	// 	return savedLinks
+	// }
 
 	return (
 		<>
-			<Header 
-			handleClick={() => setDisplay(!display)}
-			display={display}
-			/>
+			<Header handleClick={() => setDisplay(!display)} display={display} />
 			<main>
 				<Hero />
-				<Features 
-				onSubmit={(e: React.FormEvent<HTMLInputElement>) => handleSubmit(e)}
-				onChange={(e: React.FormEvent<HTMLInputElement>) => handleInputChange(e)}
-				value={inputURL}
-				//shortLink={linkData}
-				savedLinks = {savedLinks}
+				<Features
+					onSubmit={(e: React.FormEvent<HTMLInputElement>) => handleSubmit(e)}
+					onChange={(e: React.FormEvent<HTMLInputElement>) => handleInputChange(e)}
+					value={inputURL}
+					savedLinks={savedLinks}
 				/>
 				<Cta />
 			</main>
