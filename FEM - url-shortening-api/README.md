@@ -32,7 +32,9 @@ Users should be able to:
 
 ![Screenshot Desktop](./src/images/screenshot/desktop-screenshot.webp)
 ![Screenshot Mobile](./src/images/screenshot/mobile-screenshot.webp)
-![Gif](./src/images/screenshot/gif.mp4)
+
+https://user-images.githubusercontent.com/93629281/179530280-1ee558dc-3dd7-401c-b4ca-25a1619e26ac.mp4
+
 
 ### Links
 
