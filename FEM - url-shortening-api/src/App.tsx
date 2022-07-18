@@ -9,7 +9,7 @@ import { nanoid } from 'nanoid';
 
 function App() {
 	const [display, setDisplay] = useState(false);
-	const [linkData, setLinkData] = useState(JSON.parse(localStorage.getItem('links')) || []);
+	const [linkData, setLinkData] = useState(JSON.parse(localStorage.getItem('links') || '[]'));
 	const [inputURL, setInputURL] = useState('');
 	const [submit, setSubmitStatus] = useState(true);
 	const [savedLinks, setSavedLinks] = useState('');
@@ -18,7 +18,7 @@ function App() {
 	window.addEventListener('load', renderLinks);
 
 	function handleInputChange(e: React.FormEvent<HTMLInputElement>) {
-		setInputURL(e.target.value);
+		setInputURL((e.target as HTMLTextAreaElement).value);
 	}
 
 	function handleSubmit(e: React.FormEvent<HTMLInputElement>) {
@@ -26,15 +26,15 @@ function App() {
 		setSubmitStatus(!submit);
 	}
 
-	function copyClipBoard() {
-		navigator.clipboard.writeText(event.target.value);
-		event.target.style.backgroundColor = 'var(--clr-dark-violet)';
-		event.target.innerHTML = 'Copied!';
+	function copyClipBoard(e:any) {
+		navigator.clipboard.writeText((e.target as HTMLTextAreaElement).value);
+		(e.target as HTMLTextAreaElement).style.backgroundColor = 'var(--clr-dark-violet)';
+		(e.target as HTMLTextAreaElement).innerHTML = 'Copied!';
 	}
 
 	function renderLinks() {
 		setSavedLinks(
-			linkData.map((el) => {
+			linkData.map((el:any) => {
 				return (
 					<div className='shortlink-wrapper' key={(el.id = nanoid())}>
 						<div className='longlink'>{el.longLink}</div>
@@ -60,7 +60,7 @@ function App() {
 					const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
 					const data = await res.json();
 
-					setLinkData((prevLinkData) => {
+					setLinkData((prevLinkData:any) => {
 						prevLinkData.push({
 							longLink: data.result.original_link,
 							shortLink: data.result.full_short_link,

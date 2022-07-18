@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from '../images/logo.svg';
 
-export default function Header({display, handleClick}) {
+export default function Header({display, handleClick}: { display:boolean; handleClick:any}) {
 	return (
 		<header>
 			<img src={logo} className='logo header__logo' alt='logo of Shortly' />

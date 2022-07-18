@@ -5,7 +5,7 @@ import fullCusIco from '../images/icon-fully-customizable.svg';
 import Shortener from './Shortener';
 
 
-export default function Features({ onSubmit, onChange, value, savedLinks }) {
+export default function Features({ onSubmit, onChange, value, savedLinks }: { onSubmit:any; onChange:any; value:string; savedLinks:string}) {
 	
 	return (
 		<section className='feature'>

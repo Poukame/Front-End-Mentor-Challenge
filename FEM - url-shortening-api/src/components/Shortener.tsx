@@ -1,12 +1,12 @@
 
-export default function Shortener({ onSubmit, onChange, value, savedLinks }) {
+export default function Shortener({ onSubmit, onChange, value, savedLinks }: { onSubmit:any; onChange:any; value:string; savedLinks:string}) {
 	
 	return (
 		<>
 			<section className='shortener'>
 				<div className='shorten-wrapper'>
 					<form onSubmit={onSubmit}>
-						<label for='longurl' hidden>Insert a long link in this field and click submit to shorten it</label>
+						<label htmlFor='longurl' hidden>Insert a long link in this field and click submit to shorten it</label>
 						<input
 							onChange={onChange}
 							value={value}
