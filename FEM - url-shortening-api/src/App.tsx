@@ -13,6 +13,7 @@ function App() {
 	const [inputURL, setInputURL] = useState('');
 	const [submit, setSubmitStatus] = useState(true);
 	const [savedLinks, setSavedLinks] = useState('');
+	const [, setLoading] = useState(false)
 
 	function handleInputChange(e: React.FormEvent<HTMLInputElement>) {
 		setInputURL(e.target.value);
@@ -59,8 +60,10 @@ function App() {
 			}
 		}
 		getShortLink(inputURL);
+		setLoading(true);
 	}, [submit]);
 
+	
 	// function renderLinks() {
 	// 	savedLinks = linkData.map((el) => {
 	// 		return (
