@@ -30,9 +30,9 @@ Users should be able to:
 
 ### Screenshot
 
-![Screenshot Desktop](./images/screenshot/desktop-screenshot.webp)
-![Screenshot Mobile](./images/screenshot/mobile-screenshot.webp)
-![Gif](./images/screenshot/gif.mp4)
+![Screenshot Desktop](./src/images/screenshot/desktop-screenshot.webp)
+![Screenshot Mobile](./src/images/screenshot/mobile-screenshot.webp)
+![Gif](./src/images/screenshot/gif.mp4)
 
 ### Links
 
