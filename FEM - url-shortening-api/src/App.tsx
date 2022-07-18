@@ -50,6 +50,7 @@ function App() {
 				);
 			})
 		);
+		setInputURL('')
 		return savedLinks;
 	}
 
@@ -77,6 +78,7 @@ function App() {
 		}
 		getShortLink(inputURL);
 		setLoading(true);
+		
 	}, [submit]);
 
 	return (

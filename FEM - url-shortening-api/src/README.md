@@ -32,12 +32,12 @@ Users should be able to:
 
 ![Screenshot Desktop](./images/screenshot/desktop-screenshot.webp)
 ![Screenshot Mobile](./images/screenshot/mobile-screenshot.webp)
-![Gif](./images/screenshot/gif.webp)
+![Gif](./images/screenshot/gif.mp4)
 
 ### Links
 
 - GitHub : [GitHub Code](https://github.com/Poukame/ALL-my-Front-End-Mentor-Challenge/tree/main/FEM%20-%20url-shortening-api)
-- Live Site URL: [My live site of the challenge](https://fem-sunnyside-ag.netlify.app/)
+- Live Site URL: [My live site of the challenge](https://loquacious-madeleine-a87fed.netlify.app/)
 
 ## My process
 
@@ -48,11 +48,12 @@ Then I focused on the interactivity part with React. The part that gave me a har
 ### Built with
 
 - React
+- TypeScript
+- Vite
 - HTML5
 - CSS3
 - Flexbox
 - Grid
-- Vite
 - Mobile-first workflow
 
 ### What I learned
