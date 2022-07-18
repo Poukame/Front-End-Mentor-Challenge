@@ -119,12 +119,13 @@ header,
 	text-align: left;
 }
 
-.longlink {
+.longlink a {
 	color:var(--clr-grayish-violet)
 }
 
-.shortlink {
-	color:var(--clr-cyan)
+.shortlink a {
+	color:var(--clr-cyan);
+	text-decoration: none;
 }
 
 /*****************
@@ -464,7 +465,7 @@ footer {
 	}
 
 	.btn--shortlink {
-		flex: 1 1 10%;
+		flex: 0 1 10%;
 	}
 
 	.shortlink-wrapper {

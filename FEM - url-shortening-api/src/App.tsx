@@ -26,18 +26,26 @@ function App() {
 		setSubmitStatus(!submit);
 	}
 
+	function copyClipBoard() {
+		navigator.clipboard.writeText(event.target.value);
+		event.target.style.backgroundColor = 'var(--clr-dark-violet)';
+		event.target.innerHTML = 'Copied!';
+	}
+
 	function renderLinks() {
 		setSavedLinks(
 			linkData.map((el) => {
 				return (
-					<div className='shortlink-wrapper' id={(el.id = nanoid())}>
+					<div className='shortlink-wrapper' key={(el.id = nanoid())}>
 						<div className='longlink'>{el.longLink}</div>
 						<div className='shortlink'>
 							<a href={el.shortLink} target='_blank'>
 								{el.shortLink}
 							</a>
 						</div>
-						<button className='btn btn--shortlink'>Copy</button>
+						<button className='btn btn--shortlink' value={el.shortLink} onClick={copyClipBoard}>
+							Copy
+						</button>
 					</div>
 				);
 			})
@@ -62,23 +70,9 @@ function App() {
 					});
 
 					renderLinks();
-
-					// setSavedLinks(
-					// 	linkData.map((el) => {
-					// 		return (
-					// 			<div className='shortlink-wrapper' id={(el.id = nanoid())}>
-					// 				<div className='longlink'>{el.longLink}</div>
-					// 				<div className='shortlink'><a href={el.shortLink} target='_blank'>{el.shortLink}</a></div>
-					// 				<button className='btn btn--shortlink'>Copy</button>
-					// 			</div>
-					// 		);
-					// 	})
-					// );
-					console.log('savelinks', linkData);
 					localStorage.setItem('links', JSON.stringify(linkData));
-					//return savedLinks;
 				} catch (err) {
-					console.log(err);
+					alert('An error occured. Please check your connection and try again');
 				}
 			}
 		}
