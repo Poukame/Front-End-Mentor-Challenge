@@ -7,8 +7,6 @@ import Shortener from './Shortener';
 
 export default function Features({ onSubmit, onChange, value, savedLinks }) {
 	
-	console.log('feature saved links', savedLinks)
-
 	return (
 		<section className='feature'>
 			<Shortener

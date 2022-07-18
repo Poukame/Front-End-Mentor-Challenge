@@ -61,16 +61,16 @@ export default function Footer() {
 
 				<div className='social-links'>
 					<a href='#'>
-						<img src={fb} alt='' />
+						<img src={fb} alt='Click here to access the Facebook page of Shortly' />
 					</a>
 					<a href='#'>
-						<img src={twitter} alt='' />
+						<img src={twitter} alt='Click here to access Twitter the page of Shortly' />
 					</a>
 					<a href='#'>
-						<img src={pinterest} alt='' />
+						<img src={pinterest} alt='Click here to access Pinterest the page of Shortly' />
 					</a>
 					<a href='#'>
-						<img src={insta} alt='' />
+						<img src={insta} alt='Click here to access the Instagram page of Shortly' />
 					</a>
 				</div>
 			</nav>

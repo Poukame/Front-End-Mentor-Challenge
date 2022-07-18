@@ -65,7 +65,6 @@ function App() {
 							longLink: data.result.original_link,
 							shortLink: data.result.full_short_link,
 						});
-						console.log('linkdata', linkData);
 						return prevLinkData;
 					});
 

@@ -6,6 +6,7 @@ export default function Shortener({ onSubmit, onChange, value, savedLinks }) {
 			<section className='shortener'>
 				<div className='shorten-wrapper'>
 					<form onSubmit={onSubmit}>
+						<label for='longurl' hidden>Insert a long link in this field and click submit to shorten it</label>
 						<input
 							onChange={onChange}
 							value={value}
@@ -14,6 +15,7 @@ export default function Shortener({ onSubmit, onChange, value, savedLinks }) {
 							type='url'
 							required
 							placeholder='Shorten a link here...'
+							id='longurl'
 						></input>
 						<button className='btn btn--short'>Shorten it!</button>
 					</form>
