@@ -9,11 +9,13 @@ import { nanoid } from 'nanoid';
 
 function App() {
 	const [display, setDisplay] = useState(false);
-	const [linkData, setLinkData] = useState([]);
+	const [linkData, setLinkData] = useState(JSON.parse(localStorage.getItem('links')) || []);
 	const [inputURL, setInputURL] = useState('');
 	const [submit, setSubmitStatus] = useState(true);
 	const [savedLinks, setSavedLinks] = useState('');
-	const [, setLoading] = useState(false)
+	const [, setLoading] = useState(false);
+
+	window.addEventListener('load', renderLinks);
 
 	function handleInputChange(e: React.FormEvent<HTMLInputElement>) {
 		setInputURL(e.target.value);
@@ -22,6 +24,25 @@ function App() {
 	function handleSubmit(e: React.FormEvent<HTMLInputElement>) {
 		e.preventDefault();
 		setSubmitStatus(!submit);
+	}
+
+	function renderLinks() {
+		setSavedLinks(
+			linkData.map((el) => {
+				return (
+					<div className='shortlink-wrapper' id={(el.id = nanoid())}>
+						<div className='longlink'>{el.longLink}</div>
+						<div className='shortlink'>
+							<a href={el.shortLink} target='_blank'>
+								{el.shortLink}
+							</a>
+						</div>
+						<button className='btn btn--shortlink'>Copy</button>
+					</div>
+				);
+			})
+		);
+		return savedLinks;
 	}
 
 	useEffect(() => {
@@ -36,24 +57,26 @@ function App() {
 							longLink: data.result.original_link,
 							shortLink: data.result.full_short_link,
 						});
-						console.log('linkdata',linkData)
+						console.log('linkdata', linkData);
 						return prevLinkData;
 					});
 
-					setSavedLinks(
-						linkData.map((el) => {
-							return (
-								<div className='shortlink-wrapper' id={(el.id = nanoid())}>
-									<div className='longlink'>{el.longLink}</div>
-									<div className='shortlink'>{el.shortLink}</div>
-									<button className='btn btn--shortlink'>Copy</button>
-								</div>
-							);
-						})
-					);
-					console.log('savelinks', linkData)
-					return savedLinks;
+					renderLinks();
 
+					// setSavedLinks(
+					// 	linkData.map((el) => {
+					// 		return (
+					// 			<div className='shortlink-wrapper' id={(el.id = nanoid())}>
+					// 				<div className='longlink'>{el.longLink}</div>
+					// 				<div className='shortlink'><a href={el.shortLink} target='_blank'>{el.shortLink}</a></div>
+					// 				<button className='btn btn--shortlink'>Copy</button>
+					// 			</div>
+					// 		);
+					// 	})
+					// );
+					console.log('savelinks', linkData);
+					localStorage.setItem('links', JSON.stringify(linkData));
+					//return savedLinks;
 				} catch (err) {
 					console.log(err);
 				}
@@ -62,22 +85,6 @@ function App() {
 		getShortLink(inputURL);
 		setLoading(true);
 	}, [submit]);
-
-	
-	// function renderLinks() {
-	// 	savedLinks = linkData.map((el) => {
-	// 		return (
-	// 			<div className='shortlink-wrapper' id={el.id=nanoid()}>
-	// 				<div className='longlink'>{el.longLink}</div>
-	// 				<div className='shortlink'>{el.shortLink}</div>
-	// 				<button className='btn btn--shortlink'>Copy</button>
-	// 			</div>
-	// 		);
-	// 	});
-	// 	console.log('savedlinks', savedLinks)
-	// 	console.log('triggered 2')
-	// 	return savedLinks
-	// }
 
 	return (
 		<>
