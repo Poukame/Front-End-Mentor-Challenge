@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- GitHub : [GitHub Code](https://github.com/Poukame/Front-End-Mentor-Challenge/tree/main/FEM%20-%20interactive-rating-component-main)
+- GitHub : [GitHub Code](https://github.com/Poukame/Front-End-Mentor-Challenges/tree/main/FEM%20-%20interactive-rating-component-main)
 - Live Site URL: [My live site of the challenge](https://relaxed-meerkat-1c08eb.netlify.app/)
 
 ### Built with

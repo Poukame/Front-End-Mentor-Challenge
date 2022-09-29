@@ -38,7 +38,7 @@ https://user-images.githubusercontent.com/93629281/179530280-1ee558dc-3dd7-401c-
 
 ### Links
 
-- GitHub : [GitHub Code](https://github.com/Poukame/ALL-my-Front-End-Mentor-Challenge/tree/main/FEM%20-%20url-shortening-api)
+- GitHub : [GitHub Code](https://github.com/Poukame/Front-End-Mentor-Challenges/tree/main/FEM%20-%20url-shortening-api)
 - Live Site URL: [My live site of the challenge](https://loquacious-madeleine-a87fed.netlify.app/)
 
 ## My process

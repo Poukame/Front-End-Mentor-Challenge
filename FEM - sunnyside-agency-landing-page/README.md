@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- GitHub : [GitHub Code](https://github.com/Poukame/ALL-my-Front-End-Mentor-Challenge/tree/main/FEM%20-%20sunnyside-agency-landing-page)
+- GitHub : [GitHub Code](https://github.com/Poukame/Front-End-Mentor-Challenges/tree/main/FEM%20-%20sunnyside-agency-landing-page)
 - Live Site URL: [My live site of the challenge](https://fem-sunnyside-ag.netlify.app/)
 
 ## My process

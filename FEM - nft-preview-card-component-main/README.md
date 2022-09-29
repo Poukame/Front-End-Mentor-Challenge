@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- GitHub : [GitHub Code](https://github.com/Poukame/Front-End-Mentor-Challenge/tree/main/FEM%20-%20nft-preview-card-component-main)
+- GitHub : [GitHub Code](https://github.com/Poukame/Front-End-Mentor-Challenges/tree/main/FEM%20-%20nft-preview-card-component-main)
 - Live Site URL: [My live site of the challenge](https://musical-cannoli-ddb75b.netlify.app/)
 
 ## My process
