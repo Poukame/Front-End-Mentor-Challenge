@@ -4,7 +4,7 @@ import rulesBonus from '../assets/images/logo-bonus.svg';
 function Header() {
 	return (
 	
-			<HStack p='4' border='3px solid' borderColor='headerOutline' borderRadius='5px' justifyContent='space-between' >
+			<HStack width='100%' p='4' border='3px solid' borderColor='headerOutline' borderRadius='5px' justifyContent='space-between' >
 				<Box>
                 <Image maxWidth='80%' src={rulesBonus} alt='a logo with the words rock paper scissors lizard spock' />
 

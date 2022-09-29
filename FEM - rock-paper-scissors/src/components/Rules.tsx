@@ -22,7 +22,7 @@ function Rules() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
-		<Box textAlign='center'>
+		<Box flex='1 1 auto' textAlign='center'>
 			<Button
 				onClick={onOpen}
 				variant='outline'
