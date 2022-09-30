@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Box, VStack, Flex, Image } from '@chakra-ui/react';
+import { Box, Flex, Image } from '@chakra-ui/react';
 import Header from './components/Header';
 import Rules from './components/Rules';
 import Results from './components/Results';

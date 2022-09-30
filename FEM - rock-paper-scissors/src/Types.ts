@@ -45,5 +45,3 @@ export interface IGameState {
 	AiPick: TPowers;
 	whoIsWinner: 0 | 1 | 2;
 }
-
-type test = 'pick' | 'result'

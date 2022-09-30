@@ -4,7 +4,7 @@ import { IGameState, TPowers } from '../Types';
 
 const generateAiPick = function () {
 	const rndNb = Math.floor(Math.random() * 5 + 1);
-	let aiPick = '' as TPowers;
+	let aiPick = 'rock' as TPowers;
 
 	switch (rndNb) {
 		case 1:
@@ -17,6 +17,8 @@ const generateAiPick = function () {
 			return (aiPick = 'scissors') as TPowers;
 		case 5:
 			return (aiPick = 'spock') as TPowers;
+		default:
+			return (aiPick = 'rock') as TPowers;
 	}
 };
 
