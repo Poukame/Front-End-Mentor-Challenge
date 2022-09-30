@@ -6,22 +6,22 @@ import Results from './components/Results';
 import bgPentagon from './assets/images/bg-pentagon.svg';
 import IconCircle from './components/IconCircle';
 import icons from './assets/iconsStyle';
-import {generateAiPick, determineWinner} from './assets/utils';
-import { TPowers } from './Types';
+import { generateAiPick, determineWinner } from './assets/utils';
+import { IGameState, TPowers } from './Types';
 
 function App() {
 	const initialState = [
 		{
-			gameStatus: 'pick', // pick, result
+			gameStatus: 'pick' as IGameState['gameStatus'], // pick, result
 			score: 0,
-			playerPick: '',
-			AiPick: '',
-			whoIsWinner: 1, // 0 = player win, 1 = draw, 2 = ai win
+			playerPick: '' as TPowers,
+			AiPick: '' as TPowers,
+			whoIsWinner: 1 as IGameState['whoIsWinner'], // 0 = player win, 1 = draw, 2 = ai win
 		},
 	];
 
 	const [gameState, setGameState] = useState(initialState);
-	console.log('file: App.tsx ~ line 24 ~ gameState', gameState);
+	const { gameStatus, score, playerPick, AiPick, whoIsWinner } = gameState[0];
 
 	const [refresh, setRefresh] = useState(false);
 
@@ -32,7 +32,7 @@ function App() {
 					...state,
 					playerPick: name,
 					AiPick: generateAiPick(),
-					gameStatus: 'result'
+					gameStatus: 'result',
 				};
 			});
 		});
@@ -40,13 +40,27 @@ function App() {
 		setRefresh((prev) => !prev);
 	};
 
+	const switchState = function() {
+		setGameState((prev) => {
+			return prev.map((state) => {
+				return {
+					...state,
+					gameStatus: 'pick',
+					playerPick: '',
+					AiPick: '',
+					whoIsWinner: 1,
+				};
+			});
+		});
+	}
+
 	useEffect(() => {
 		setGameState((prev) => {
 			return prev.map((state) => {
 				return {
 					...state,
 					whoIsWinner: determineWinner(gameState),
-					score: determineWinner(gameState) === 0 ? state.score++ : state.score
+					score: determineWinner(gameState) === 0 ? state.score++ : state.score,
 				};
 			});
 		});
@@ -77,14 +91,16 @@ function App() {
 			mx='auto'
 			gap='20'
 		>
-			<Header />
+			<Header score={score} whoIsWinner={whoIsWinner} gameStatus={gameStatus} />
 
-			<Box flex='0 1 auto' position='relative'>
-				<Image src={bgPentagon} width='85%' mx='auto' />
-				{SelectIconsHTML}
-			</Box>
+			{gameStatus === 'pick' && (
+				<Box flex='0 1 auto' position='relative'>
+					<Image src={bgPentagon} width='85%' mx='auto' />
+					{SelectIconsHTML}
+				</Box>
+			)}
 
-			{/* <Results /> */}
+			{gameStatus === 'result' && <Results switchState={switchState} playerPick={playerPick} AiPick={AiPick} whoIsWinner={whoIsWinner} />}
 			<Rules />
 		</Flex>
 	);
