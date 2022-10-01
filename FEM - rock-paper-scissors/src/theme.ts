@@ -56,6 +56,5 @@ const body = {
 
 // // 3. extend the theme
 const theme = extendTheme({ breakpoints }, fonts, body, colors);
-console.log('file: theme.ts ~ line 57 ~ theme', theme);
 
 export default theme;
