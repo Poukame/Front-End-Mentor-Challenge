@@ -1,9 +1,7 @@
 import {
-	Text,
 	Box,
 	Image,
 	Button,
-	HStack,
 	VStack,
 	Modal,
 	ModalOverlay,
@@ -20,14 +18,19 @@ function Rules() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
-		<Box flex='1 1 auto' textAlign={['center', 'right']} transform={['translate(0px)','translate(70px)']}>
+		<Box
+			flex='1 1 auto'
+			textAlign={['center', 'right']}
+			transform={['translate(0px)', 'translate(70px)']}
+		>
 			<Button
 				onClick={onOpen}
 				variant='outline'
 				textTransform='uppercase'
-				color='#fafbf8'
+				color='bgWhite'
 				px='8'
 				mx='auto'
+				_hover={{bgColor:'bgWhite', color:'#666667'}}
 			>
 				Rules
 			</Button>
@@ -51,7 +54,7 @@ function Rules() {
 
 						<ModalFooter>
 							<Button mt='4' bgColor='transparent' onClick={onClose}>
-                                <Image width='40px' src={close} />
+								<Image width='40px' src={close} />
 							</Button>
 						</ModalFooter>
 					</VStack>

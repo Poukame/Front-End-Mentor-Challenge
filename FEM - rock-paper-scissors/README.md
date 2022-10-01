@@ -1,6 +1,6 @@
 # Frontend Mentor - Rock, Paper, Scissors
 
-![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg) 
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH)
 
 ## Table of contents
 
@@ -13,56 +13,34 @@
   - [What I learned](#what-i-learned)
 - [Author](#author)
 
-## Overview
-
-With this project I wanted to challenge myself with React and async API call.
-Despite an issue that blocked me for a while I have managed to complete this project.
 ### The challenge
 
 Users should be able to:
 
-- View the optimal layout for the site depending on their device's screen size
-- Shorten any valid URL
-- See a list of their shortened links, even after refreshing the browser
-- Copy the shortened link to their clipboard in a single click
-- Receive an error message when the `form` is submitted if:
-  - The `input` field is empty
+- View the optimal layout for the game depending on their device's screen size
+- Play Rock, Paper, Scissors against the computer
+- Play Rock, Paper, Scissors, Lizard, Spock against the computer _(optional)_
 
 ### Screenshot
 
-![Screenshot Desktop](./src/images/screenshot/desktop-screenshot.webp)
-![Screenshot Mobile](./src/images/screenshot/mobile-screenshot.webp)
-
-https://user-images.githubusercontent.com/93629281/179530280-1ee558dc-3dd7-401c-b4ca-25a1619e26ac.mp4
-
+![Screenshot Pick](./src/assets/screenshots/pick.webp)
+![Screenshot Results](./src/assets/screenshots/result.webp)
+![Screenshot Animated](./src/assets/screenshots/animated.webp)
 
 ### Links
 
-- GitHub : [GitHub Code](https://github.com/Poukame/ALL-my-Front-End-Mentor-Challenge/tree/main/FEM%20-%20url-shortening-api)
-- Live Site URL: [My live site of the challenge](https://loquacious-madeleine-a87fed.netlify.app/)
+- GitHub : [GitHub Code](https://github.com/Poukame/Front-End-Mentor-Challenges/tree/main/FEM%20-%20rock-paper-scissors)
+- Live Site URL: [My live site of the challenge](https://earnest-scone-74f52a.netlify.app/)
 
-## My process
-
-I use the mobile first approach and did the mobile then the desktop layout before anything else.
-
-Then I focused on the interactivity part with React. The part that gave me a hard time was to trigger a render to display the link after the click AND the fetch.
 
 ### Built with
 
 - React
 - TypeScript
 - Vite
-- HTML5
-- CSS3
-- Flexbox
-- Grid
+- Chakra UI
 - Mobile-first workflow
 
-### What I learned
-
-I learned more about the React logic. As I was reading and learning about it as part of my learning I got new knowledge and would probably not struture this project the way I did.
-
-Knowledge for a future project :)
 
 ## Author
 

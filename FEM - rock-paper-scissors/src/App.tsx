@@ -85,8 +85,8 @@ function App() {
 	return (
 		<Flex
 			flexDirection='column'
-			height='90vh'
-			px='4'
+			height='100vh'
+			p='4'
 			justifyContent='space-between'
 			justifyItems='flex-end'
 			maxW='750px'

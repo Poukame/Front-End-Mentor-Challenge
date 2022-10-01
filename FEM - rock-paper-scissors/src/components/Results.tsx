@@ -24,8 +24,6 @@ function Results({ switchState, playerPick, AiPick, whoIsWinner }: IResultsProps
 		}, 1000);
 	}, []);
 
-
-
 	return (
 		<>
 			<Grid templateColumns={templateColums} templateRows={templateRows} gap='10'>
@@ -38,7 +36,7 @@ function Results({ switchState, playerPick, AiPick, whoIsWinner }: IResultsProps
 					>
 						<Circle
 							size={sizeResults}
-							bg='#fafbf8'
+							bg='bgWhite'
 							outline={outline}
 							outlineColor={[getIconBorderColor(playerPick), getIconBorderColor(playerPick)]}
 							p='2'
@@ -48,24 +46,24 @@ function Results({ switchState, playerPick, AiPick, whoIsWinner }: IResultsProps
 						<Text
 							fontSize={['sm', 'lg']}
 							textTransform='uppercase'
-							color='#fafbf8'
+							color='bgWhite'
 							letterSpacing='1px'
 						>
 							You picked
 						</Text>
 					</Flex>
 				</GridItem>
-				<GridItem colStart={[2,3]}>
-					<Flex
-						gap={['6', '12']}
-						flexDirection={['column', 'column-reverse']}
-						alignItems='center'
-					>
+				<GridItem colStart={[2, 3]}>
+					<Flex gap={['6', '12']} flexDirection={['column', 'column-reverse']} alignItems='center'>
 						<Circle
 							size={sizeResults}
-							bgColor={toggle ? '#fafbf8' : 'bgColor.100'}
+							bgColor={toggle ? 'bgWhite' : 'bgColor.100'}
 							outline={outline}
-							outlineColor={toggle ? [getIconBorderColor(playerPick), getIconBorderColor(playerPick)] : ['transparent','transparent']}
+							outlineColor={
+								toggle
+									? [getIconBorderColor(AiPick), getIconBorderColor(AiPick)]
+									: ['transparent', 'transparent']
+							}
 							p='2'
 							as={motion.div}
 							animation={toggle ? animation : ''}
@@ -75,7 +73,7 @@ function Results({ switchState, playerPick, AiPick, whoIsWinner }: IResultsProps
 						<Text
 							fontSize={['sm', 'lg']}
 							textTransform='uppercase'
-							color='#fafbf8'
+							color='bgWhite'
 							letterSpacing='1px'
 						>
 							The house picked
@@ -84,7 +82,7 @@ function Results({ switchState, playerPick, AiPick, whoIsWinner }: IResultsProps
 				</GridItem>
 				<GridItem rowStart={[2, 1]} colSpan={[2, 1]} colStart={[1, 2]} alignSelf='end'>
 					<VStack animation={toggle ? animation : ''} visibility={toggle ? 'visible' : 'hidden'}>
-						<Text textTransform='uppercase' color='#fafbf8' fontSize='5xl' fontWeight='700'>
+						<Text textTransform='uppercase' color='bgWhite' fontSize='5xl' fontWeight='700'>
 							{getTextResult(whoIsWinner)}
 						</Text>
 						<Button
@@ -106,4 +104,4 @@ export default Results;
 
 const templateColums = ['repeat(2, 1fr', '1fr min-content 1fr'];
 const templateRows = ['repeat(2, 1fr', 'repeat(1, min-content)'];
-const outline = ['15px solid', '25px solid']
+const outline = ['15px solid', '25px solid'];

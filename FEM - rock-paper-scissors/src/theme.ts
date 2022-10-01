@@ -18,6 +18,7 @@ const colors = {
 		scoreText: 'hsl(229, 64%, 46%)',
 		darkText: 'hsl(229, 25%, 31%)',
 		headerOutline: 'hsl(217, 16%, 45%)',
+		bgWhite: '#fafbf8',
 		bgColor: { 50: 'hsl(214, 47%, 23%)', 100: 'hsl(237, 49%, 15%)' },
 		scissors: {
 			50: 'hsl(39, 89%, 49%)',

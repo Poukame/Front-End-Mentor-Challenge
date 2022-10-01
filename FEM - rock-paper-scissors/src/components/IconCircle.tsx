@@ -1,13 +1,20 @@
-import React from 'react';
 import { Image, Circle } from '@chakra-ui/react';
 import { IPropsIconCircle } from '../Types';
 
-function IconCircle({outlineColor, top, left, imgPath, size, name, handleSelect}:IPropsIconCircle) {
+function IconCircle({
+	outlineColor,
+	top,
+	left,
+	imgPath,
+	size,
+	name,
+	handleSelect,
+}: IPropsIconCircle) {
 	return (
 		<Circle
-            id={name}
+			id={name}
 			size={size}
-			bg='#fafbf8'
+			bg='bgWhite'
 			outline='15px solid'
 			outlineColor={outlineColor}
 			p='2'
@@ -15,7 +22,7 @@ function IconCircle({outlineColor, top, left, imgPath, size, name, handleSelect}
 			left={left}
 			transform='translate(50%, -50%)'
 			position='absolute'
-            onClick={() => handleSelect(name)}
+			onClick={() => handleSelect(name)}
 		>
 			<Image src={imgPath} alt={`icon of ${name}`} width='70%' pointerEvents='none' />
 		</Circle>
