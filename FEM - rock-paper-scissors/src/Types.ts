@@ -3,10 +3,10 @@ export type TPowers = 'lizard' | 'paper' | 'rock' | 'spock' | 'scissors' | '';
 
 export interface IPropsIconCircle {
 	name: TPowers;
-	size: string;
+	size: string[];
 	outlineColor: string;
-	top: string;
-	left: string;
+	top: string[] | string;
+	left: string[] | string;
 	imgPath: string;
 	handleSelect: (name: TPowers) => void;
 }
@@ -31,8 +31,8 @@ export interface IIconCircle {
 	sizeSelect: string[];
 	sizeResults: string[];
 	outlineColor: string;
-	top: string[];
-	left: string[];
+	top: string[] | string;
+	left: string[] | string;
 	imgPath: string;
 	beats: string[];
 	isBeatenBy: string[];

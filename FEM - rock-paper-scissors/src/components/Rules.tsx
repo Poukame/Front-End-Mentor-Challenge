@@ -20,7 +20,7 @@ function Rules() {
 	const { isOpen, onOpen, onClose } = useDisclosure();
 
 	return (
-		<Box flex='1 1 auto' textAlign='center'>
+		<Box flex='1 1 auto' textAlign={['center', 'right']} transform={['translate(0px)','translate(70px)']}>
 			<Button
 				onClick={onOpen}
 				variant='outline'
@@ -46,7 +46,7 @@ function Rules() {
 							Rules
 						</ModalHeader>
 						<ModalBody>
-							<Image src={rules} />
+							<Image src={rules} width={['100%', '500px']} />
 						</ModalBody>
 
 						<ModalFooter>

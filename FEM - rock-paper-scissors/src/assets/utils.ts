@@ -42,7 +42,7 @@ const determineWinner = function (gameState: IGameState[]) {
 
 function getIconBorderColor(pick: string = 'rock') {
 	const borderColor = icons.find((el) => el.name === pick)?.outlineColor;
-	return borderColor;
+	return borderColor ?? 'lizard.100';
 }
 
 function getIconPath(pick: string = 'rock') {

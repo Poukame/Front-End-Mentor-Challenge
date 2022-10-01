@@ -11,8 +11,6 @@ import { IGameState, TPowers } from './Types';
 
 function App() {
 
-	// Maintain the state of the score after refreshing the browser _(optional)_
-
 	const initialState = [
 		{
 			gameStatus: 'pick' as IGameState['gameStatus'], // pick, result
@@ -94,6 +92,7 @@ function App() {
 			maxW='750px'
 			mx='auto'
 			gap='20'
+			position='relative'
 		>
 			<Header score={score} whoIsWinner={whoIsWinner} gameStatus={gameStatus} />
 
