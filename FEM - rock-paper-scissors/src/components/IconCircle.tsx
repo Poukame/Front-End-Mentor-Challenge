@@ -23,6 +23,7 @@ function IconCircle({
 			transform='translate(50%, -50%)'
 			position='absolute'
 			onClick={() => handleSelect(name)}
+			_hover={{cursor:'pointer'}}
 		>
 			<Image src={imgPath} alt={`icon of ${name}`} width='70%' pointerEvents='none' />
 		</Circle>
