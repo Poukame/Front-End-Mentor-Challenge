@@ -17,7 +17,7 @@ function IconCircle({outlineColor, top, left, imgPath, size, name, handleSelect}
 			position='absolute'
             onClick={() => handleSelect(name)}
 		>
-			<Image src={imgPath} alt={`icon of ${name}`} pointerEvents='none' />
+			<Image src={imgPath} alt={`icon of ${name}`} width='70%' pointerEvents='none' />
 		</Circle>
 	);
 }

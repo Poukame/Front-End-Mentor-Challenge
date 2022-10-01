@@ -10,39 +10,41 @@ import {
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { IResultsProps } from '../Types';
+import { sizeResults } from '../assets/iconsStyle';
 import { getIconBorderColor, getIconPath, getTextResult, animation } from '../assets/utils';
 
 function Results({ switchState, playerPick, AiPick, whoIsWinner }: IResultsProps) {
+
 	const [toggle, setToggle] = useState(false);
 
 	useEffect(() => {
 		setTimeout(() => {
 			setToggle(true);
-		}, 1500);
+		}, 1000);
 	}, []);
 
 	return (
 		<>
 			<Flex flexDirection='column' gap='10'>
 				<HStack alignItems='flex-start' flex='2 1 auto' w='95%' mx='auto' fontSize='.9em'>
-					<VStack gap='4' width='50%' justifyItems='flex-end'>
+					<Flex gap='6' width='50%' justifyItems='flex-end' flexDirection={['column', 'column-reverse']} alignItems='center'>
 						<Circle
-							size='100px'
+							size={sizeResults}
 							bg='#fafbf8'
 							outline='15px solid'
 							outlineColor={getIconBorderColor(playerPick)}
 							p='2'
 						>
-							<Image src={getIconPath(playerPick)} />
+							<Image src={getIconPath(playerPick)} width='60%'/>
 						</Circle>
 						<Text textTransform='uppercase' color='#fafbf8' letterSpacing='1px'>
 							You picked
 						</Text>
-					</VStack>
+					</Flex>
 
-					<VStack gap='4' width='50%'>
+					<Flex gap='6' width='50%' flexDirection={['column', 'column-reverse']} alignItems='center'>
 						<Circle
-							size='100px'
+							size={sizeResults}
 							bgColor={toggle ? '#fafbf8' : 'bgColor.100'}
 							outline='15px solid'
 							outlineColor={toggle ? getIconBorderColor(AiPick) : 'transparent'}
@@ -50,12 +52,12 @@ function Results({ switchState, playerPick, AiPick, whoIsWinner }: IResultsProps
 							as={motion.div}
 							animation={toggle ? animation : ''}
 						>
-							{toggle ? <Image src={getIconPath(AiPick)} /> : ''}
+							{toggle ? <Image src={getIconPath(AiPick)} width='60%' /> : ''}
 						</Circle>
 						<Text textTransform='uppercase' color='#fafbf8' letterSpacing='1px'>
 							The house picked
 						</Text>
-					</VStack>
+					</Flex>
 				</HStack>
 
 				<VStack animation={toggle ? animation : ''} visibility={toggle ? 'visible' : 'hidden'}>

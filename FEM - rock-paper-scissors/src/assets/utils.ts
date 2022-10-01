@@ -1,24 +1,24 @@
 import { keyframes } from '@chakra-ui/react';
-import icons from './iconsStyle';
+import {icons} from './iconsStyle';
 import { IGameState, TPowers } from '../Types';
 
-const generateAiPick = function () {
+const generateAiPick = function ():TPowers {
 	const rndNb = Math.floor(Math.random() * 5 + 1);
-	let aiPick = 'rock' as TPowers;
+	let aiPick = '';
 
 	switch (rndNb) {
 		case 1:
-			return (aiPick = 'lizard') as TPowers;
+			return (aiPick = 'lizard');
 		case 2:
-			return (aiPick = 'rock') as TPowers;
+			return (aiPick = 'rock');
 		case 3:
-			return (aiPick = 'paper') as TPowers;
+			return (aiPick = 'paper');
 		case 4:
-			return (aiPick = 'scissors') as TPowers;
+			return (aiPick = 'scissors');
 		case 5:
-			return (aiPick = 'spock') as TPowers;
+			return (aiPick = 'spock');
 		default:
-			return (aiPick = 'rock') as TPowers;
+			return (aiPick = 'rock');
 	}
 };
 

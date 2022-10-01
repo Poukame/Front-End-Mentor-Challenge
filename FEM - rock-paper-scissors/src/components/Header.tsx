@@ -13,7 +13,7 @@ function Header({ score, gameStatus }: IHeaderProps) {
 			setToggle(true);
 			setTimeout(() => {
 				setToggle(false);
-			}, 1500);
+			}, 1000);
 		}
 	}, [gameStatus]);
 

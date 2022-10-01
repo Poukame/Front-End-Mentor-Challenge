@@ -28,11 +28,11 @@ export interface IResultsProps {
 
 export interface IIconCircle {
 	name: TPowers;
-	sizeSelect: string;
-	sizeResults: string;
+	sizeSelect: string[];
+	sizeResults: string[];
 	outlineColor: string;
-	top: string;
-	left: string;
+	top: string[];
+	left: string[];
 	imgPath: string;
 	beats: string[];
 	isBeatenBy: string[];

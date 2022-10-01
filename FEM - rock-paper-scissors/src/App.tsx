@@ -5,11 +5,14 @@ import Rules from './components/Rules';
 import Results from './components/Results';
 import bgPentagon from './assets/images/bg-pentagon.svg';
 import IconCircle from './components/IconCircle';
-import icons from './assets/iconsStyle';
+import {icons} from './assets/iconsStyle';
 import { generateAiPick, determineWinner } from './assets/utils';
 import { IGameState, TPowers } from './Types';
 
 function App() {
+
+	// Maintain the state of the score after refreshing the browser _(optional)_
+
 	const initialState = [
 		{
 			gameStatus: 'pick' as IGameState['gameStatus'], // pick, result
@@ -69,6 +72,7 @@ function App() {
 	const SelectIconsHTML = icons.map((icon) => {
 		return (
 			<IconCircle
+				key={icon.name}
 				name={icon.name}
 				size={icon.sizeSelect}
 				outlineColor={icon.outlineColor}
@@ -87,15 +91,15 @@ function App() {
 			px='4'
 			justifyContent='space-between'
 			justifyItems='flex-end'
-			maxW='650px'
+			maxW='750px'
 			mx='auto'
 			gap='20'
 		>
 			<Header score={score} whoIsWinner={whoIsWinner} gameStatus={gameStatus} />
 
 			{gameStatus === 'pick' && (
-				<Box flex='0 1 auto' position='relative'>
-					<Image src={bgPentagon} width='85%' mx='auto' />
+				<Box flex='0 1 auto' position='relative' width={['290px', '400px']} mx='auto'>
+					<Image src={bgPentagon} width='100%'  mx='auto' />
 					{SelectIconsHTML}
 				</Box>
 			)}
