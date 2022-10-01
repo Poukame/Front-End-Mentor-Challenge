@@ -33,7 +33,7 @@ function Header({ score, gameStatus }: IHeaderProps) {
 					alt='a logo with the words rock paper scissors lizard spock'
 				/>
 			</Box>
-			<Box px='5' py='1' border='3px solid' borderColor='bgWhite' borderRadius='5px' bgColor='#fafbf8'>
+			<Box px='5' py='1' border='3px solid' borderColor='bgWhite' borderRadius='5px' bgColor='bgWhite'>
 				<VStack fontWeight='700'>
 					<Text
 						fontSize='sm'

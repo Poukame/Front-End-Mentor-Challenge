@@ -15,6 +15,7 @@ Use **ctrl + click** to open in a new tab.
 - 05 : [Advice Generator](https://fem-advice-gen.netlify.app/)
 - 06 : [Tracking App](https://luxury-sopapillas-e6453e.netlify.app/)
 - 07 : [URL Shortener](https://loquacious-madeleine-a87fed.netlify.app/)
+- 08 : [Rock Paper Scissors Lizard Spock](https://earnest-scone-74f52a.netlify.app/)
 
 
 
