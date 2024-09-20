@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'DMSans';
+    src: url('./assets/fonts/DMSans-VariableFont_opsz\,wght.ttf') format('truetype');
+} 
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h2 {
+  @apply font-medium text-2xl leading-5 tracking-tighter;
+}
