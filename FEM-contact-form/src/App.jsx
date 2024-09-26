@@ -18,7 +18,7 @@ function App() {
 	const [displayToast, setDisplayToast] = useState(false);
 
 	const fieldStyle =
-		'mt-2 border rounded-lg border-gray-500 active:border-t-green-600 focus:border-t-green-600 hover:border-t-green-600 hover:border-x-green-200 hover:border-b-green-200 px-4 py-1 text-gray-900 hover:cursor-pointer';
+		'mt-2 border rounded-lg border-gray-500 active:border-t-green-600 focus:border-t-green-600 hover:border-t-green-600 hover:border-x-green-200 hover:border-b-green-200 px-4 py-2 text-gray-900 hover:cursor-pointer';
 	const labelStyle = 'text-gray-600 text-sm mt-4';
 	const errorStyle = 'text-red-500 text-sm mt-2';
 
@@ -47,6 +47,8 @@ function App() {
 			>
 				{({ errors }) => (
 					<Form className='flex flex-col'>
+					<div className='md:flex md:gap-4'>
+						<div className='flex flex-col md:w-1/2'>
 						<label className={labelStyle} htmlFor='firstName'>
 							First Name *
 						</label>
@@ -54,10 +56,13 @@ function App() {
 							className={`${fieldStyle} ${errors.firstName ? 'border-red-500' : ''}`}
 							id='firstName'
 							name='firstName'
-							placeholder='john doe'
 							aria-required='true'
 						/>
 						<ErrorMessage role='alert' name='firstName' component='div' className={errorStyle} aria-live='assertive' />
+
+
+						</div>
+						<div className='flex flex-col md:w-1/2'>
 						<label className={labelStyle} htmlFor='lastName'>
 							Last Name *
 						</label>
@@ -65,10 +70,14 @@ function App() {
 							className={`${fieldStyle} ${errors.lastName ? 'border-red-500' : ''}`}
 							id='lastName'
 							name='lastName'
-							placeholder='last name'
 							aria-required='true'
 						/>
 						<ErrorMessage role='alert' name='lastName' component='div' className={errorStyle} aria-live='assertive' />
+
+						</div>
+
+
+					</div>
 						<label className={labelStyle} htmlFor='email'>
 							Email *
 						</label>
@@ -77,7 +86,6 @@ function App() {
 							id='email'
 							name='email'
 							type='email'
-							placeholder='email@gmail.com'
 							aria-required='true'
 						/>
 						<ErrorMessage role='alert' name='email' component='div' className={errorStyle} aria-live='assertive' />
@@ -85,19 +93,23 @@ function App() {
 							<legend className={labelStyle} id='radioGroup'>
 								Query Type *
 							</legend>
-							<div className='flex flex-col' role='group' aria-labelledby='radioGroup'></div>
-							<label tabIndex='0' className={`${fieldStyle} mb-0 flex gap-2 focus:bg-green-200 hover:bg-green-200`}>
+							<div className='lg:flex lg:flex-row gap-4' role='group' aria-labelledby='radioGroup'>
+
+							<label tabIndex='0' className={`${fieldStyle} mb-0 lg:w-1/2 flex gap-2 focus:bg-green-200 hover:bg-green-200`}>
 								<Field type='radio' name='queryType' value='general' />
 								General Enquiry
 							</label>
 
 							<label
 								tabIndex='0'
-								className={`${fieldStyle} flex gap-2 focus:bg-green-200 hover:bg-green-200`}
+								className={`${fieldStyle} flex lg:w-1/2 gap-2 focus:bg-green-200 hover:bg-green-200`}
 							>
 								<Field type='radio' name='queryType' value='support' aria-required='true' />
 								Support Request
 							</label>
+
+
+							</div>
 						</fieldset>
 						<ErrorMessage role='alert' name='queryType' component='div' className={errorStyle} aria-live='assertive' />
 						<label className={labelStyle} htmlFor='message' required>
@@ -107,7 +119,6 @@ function App() {
 							className={`${fieldStyle} ${errors.message ? 'border-red-500' : ''}`}
 							id='message'
 							name='message'
-							placeholder='message'
 							as='textarea'
 							rows='6'
 							aria-required='true'
