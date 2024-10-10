@@ -37,6 +37,7 @@ I've added the first name on confirm toast, fetched from Formik.
 - React
 - Tailwind CSS
 - Formik and Yup
+- Vite
 - Mobile-first workflow
 
 ## Author
