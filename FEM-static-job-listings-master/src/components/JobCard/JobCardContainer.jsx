@@ -13,7 +13,7 @@ export default function JobCardContainer() {
 		filtersList.length == 0 && setIsFilter(false);
 	}, [filtersList]);
 
-	function filter(e) {
+	function setFilter(e) {
 		setFiltersList((prev) => (prev.includes(e.target.textContent) ? [...prev] : [...prev, e.target.textContent]));
 		setIsFilter(true);
 	}
@@ -72,7 +72,7 @@ export default function JobCardContainer() {
 		: renderCards;
 
 	return (
-		<CardContext.Provider value={{ filter, removeFilter, clearFilter }}>
+		<CardContext.Provider value={{ setFilter, removeFilter, clearFilter }}>
 			<div className='bg-cyan-light-bg'>
 				<div className={`max-w-2xl lg:max-w-5xl mb-4 px-6 ${isFilter ? 'min-h-min' : 'h-14'} transition-height duration-300 ease-in-out mx-auto`}>
 					{isFilter && <FilterBox>{filtersList}</FilterBox>}

@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import JobCard from './components/JobCard/index';
+import JobCardContainer from './components/JobCard/JobCardContainer';
 
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
 	return (
 		<>
 			<Header />
-			<JobCard.Container />
+			<JobCardContainer />
 		</>
 	);
 }
