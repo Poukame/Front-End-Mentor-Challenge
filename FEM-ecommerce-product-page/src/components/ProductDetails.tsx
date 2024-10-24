@@ -1,14 +1,16 @@
-import { WithChildren } from '../types';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { AppContext } from '../App';
+import Counter from './Counter';
 
-function ProductDetails({ children }: WithChildren) {
-	const { productIndex, productData, countFromCounter } = useContext(AppContext);
+function ProductDetails() {
+	const { productIndex, productData } = useContext(AppContext);
+	// get the value of count with render props
+	const [countFromCounter, setCountFromCounter] = useState(1);
 
-	const { brand, name, description, regularPrice, isDiscount, discountValue } = productData[productIndex];
-
-	const calcPrice = (regularPrice * (1 - discountValue / 100) * countFromCounter).toFixed(2);
-	const regularTotalPrice = regularPrice * countFromCounter
+	const { id, brand, name, description, regularPrice, isDiscount, discountValue } = productData[productIndex];
+	const calcPrice = Number((regularPrice * (1 - discountValue / 100) * countFromCounter).toFixed(2));
+	const calcUnitPriceDiscount = Number((regularPrice * (1 - discountValue / 100)).toFixed(2));
+	const regularTotalPrice = regularPrice * countFromCounter;
 
 	return (
 		<div className='p-6'>
@@ -20,11 +22,18 @@ function ProductDetails({ children }: WithChildren) {
 				{isDiscount && (
 					<>
 						<p className='bg-black text-white rounded-lg px-3 py-1 font-bold ml-4'>{discountValue}%</p>
-						<p className='font-bold text-dark-gray-blue line-through ml-auto self-center text-xl'>${regularTotalPrice}</p>
+						<p className='font-bold text-dark-gray-blue line-through ml-auto self-center text-xl'>
+							${regularTotalPrice}
+						</p>
 					</>
 				)}
 			</div>
-			{children}
+			<Counter calcPrice={calcPrice} productId={id} calcUnitPriceDiscount={calcUnitPriceDiscount} >
+				{(countFromCounter: number) => {
+					setCountFromCounter(countFromCounter);
+					return <></>;
+				}}
+			</Counter>
 		</div>
 	);
 }

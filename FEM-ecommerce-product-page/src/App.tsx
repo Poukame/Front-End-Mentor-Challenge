@@ -2,14 +2,16 @@ import Header from './components/Header';
 import ProductDisplay from './components/ProductDisplay';
 import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
-import Counter from './components/Counter';
 import { useState, createContext } from 'react';
 import { productData } from './assets/productData';
 
 const initialValues = {
 	isCart: false,
 	productIndex: 0,
-	sendToCart: (count: number) => {},
+	isMenu: false,
+	productData: { productData },
+	changeProductIndex: (param: string) => {},
+	sendToCart: (count: number, productId: number, calcPrice: number, calcUnitPriceDiscount:number) => {},
 };
 
 const AppContext = createContext(initialValues);
@@ -18,37 +20,63 @@ export default function App() {
 	const [isMenu, setIsMenu] = useState(false);
 	const [isCart, setIsCart] = useState(false);
 	const [productIndex, setProductIndex] = useState(0);
+	const [cartItems, setCartItems] = useState([]);
+	console.log('cartItems:', cartItems);
 
 	function changeProductIndex(param: 'minus' | 'plus') {
 		const maxIndex = productData.length;
-		if (param.toLowerCase() === 'plus') {
-			setProductIndex((productIndex) => (productIndex + 1 >= maxIndex ? 0 : productIndex + 1));
-		}
-		if (param.toLowerCase() === 'minus') {
-			setProductIndex((productIndex) => (productIndex - 1 < 0 ? maxIndex - 1 : productIndex - 1));
-		}
+		setProductIndex((productIndex) => {
+			const step = param === 'plus' ? 1 : -1;
+			const newIndex = (productIndex + step + maxIndex) % maxIndex;
+			return newIndex;
+		});
 	}
 
-	// get the value of count with render props
-	const [countFromCounter, setCountFromCounter] = useState(1);
+	function sendToCart(count: number, productId: number, calcPrice: number, calcUnitPriceDiscount:number) {
 
-	function sendToCart(count: number) {
-		console.log(count);
+		setCartItems((prev) => {
+			const existingCartItem = prev.find((el) => el.id === productId);
+
+			if (existingCartItem) {
+				return prev.map((el) => {
+					if (el.id === productId) {
+						return {
+							...el,
+							total: el.total + calcPrice,
+							count: el.count + count,
+						};
+					}
+					return el;
+				});
+			} 
+
+			const getProduct = productData.find((el) => el.id === productId);
+
+			if (!getProduct) {
+				console.error(`Product with ID ${productId} not found in productData`);
+				return prev;
+			}
+	
+			const newProduct = {
+				...getProduct,
+				total: calcPrice,
+				count: count,
+				calcUnitPriceDiscount: calcUnitPriceDiscount
+			};
+	
+			return [...prev, newProduct];
+		});
 	}
 
 	return (
 		<div className='w-full h-screen'>
 			<div className='md:max-w-screen-lg mx-auto'>
-				<AppContext.Provider
-					value={{ isCart, sendToCart, isMenu, productIndex, changeProductIndex, productData, countFromCounter }}
-				>
+				<AppContext.Provider value={{ isCart, sendToCart, isMenu, productIndex, changeProductIndex, productData, cartItems }}>
 					<Header setToggleMenu={() => setIsMenu(!isMenu)} setIsCart={() => setIsCart(!isCart)} />
 					<ProductDisplay>
 						<Cart />
 					</ProductDisplay>
-					<ProductDetails>
-						<Counter>{(countFromCounter: number) => {setCountFromCounter(countFromCounter); return <></>}}</Counter>
-					</ProductDetails>
+					<ProductDetails />
 				</AppContext.Provider>
 			</div>
 		</div>

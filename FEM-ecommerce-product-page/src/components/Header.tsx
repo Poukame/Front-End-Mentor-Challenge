@@ -8,8 +8,14 @@ import { useContext } from 'react';
 import { AppContext } from '../App';
 
 function Header({ setToggleMenu, setIsCart }: IPropsHeader) {
-	const { isMenu } = useContext(AppContext);
-
+	const { isMenu, cartItems } = useContext(AppContext);
+	
+	const nbItemsInCart = cartItems.reduce((acc:number, cur) => {
+			acc += cur.count
+			return acc
+		},0)
+	
+	
 	const navItems = [
 		{ nav: 'Collections', link: '/' },
 		{ nav: 'Men', link: '/' },
@@ -26,10 +32,10 @@ function Header({ setToggleMenu, setIsCart }: IPropsHeader) {
 	});
 
 	return (
-		<div className='flex items-center bg-white px-4 py-5 justify-between'>
+		<div className='flex items-center bg-white px-4 lg:px-0 py-5 justify-between'>
 			<div className='flex gap-4 items-baseline md:items-center'>
-				<button onClick={() => setToggleMenu()}>
-					<img className='w-5 h-5 md:hidden' src={menuIcon} alt='click to display the menu' />
+				<button className='md:hidden' onClick={() => setToggleMenu()}>
+					<img className='w-5 h-5 ' src={menuIcon} alt='click to display the menu' />
 				</button>
 				<a href='/'>
 					<img className='h-6' src={logo} alt='logo of Sneakers brand.' />
@@ -59,12 +65,10 @@ function Header({ setToggleMenu, setIsCart }: IPropsHeader) {
 						setIsCart();
 					}}
 				>
-					{/* <img className='h-8 w-8' src={cartIcon} alt='cart icon to access your cart.' /> */}
-
 					<IoCartOutline />
 					<span className='absolute -inset-5 bottom-0 left-0'>
 						<div className='inline-flex items-center px-1.5 py-0.5 border-2 border-white rounded-full text-xs font-semibold bg-main-orange text-white'>
-							6
+							{nbItemsInCart}
 						</div>
 					</span>
 				</button>

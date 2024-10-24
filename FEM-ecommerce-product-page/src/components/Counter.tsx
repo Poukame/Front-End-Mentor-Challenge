@@ -5,7 +5,7 @@ import { useState, useContext, useEffect } from 'react';
 import { AppContext } from '../App';
 import { CounterProps } from '../types';
 
-function Counter({children}:CounterProps) {
+function Counter({children, calcPrice, productId, calcUnitPriceDiscount}:CounterProps) {
 	const { sendToCart, productIndex } = useContext(AppContext);
 	const [count, setCount] = useState(1);
 
@@ -27,8 +27,7 @@ function Counter({children}:CounterProps) {
 				<button
 					className='p-6'
 					onClick={() => {
-						const newCount = count - 1 < 1 ? 1 : count - 1;
-						handleCountChange(newCount);
+						handleCountChange(count - 1 < 1 ? 1 : count - 1);
 					}}
 				>
 					<img src={minusIcon} alt='icon minus to decrease the amount' />
@@ -37,8 +36,7 @@ function Counter({children}:CounterProps) {
 				<button
 					className='p-6'
 					onClick={() => {
-						const newCount = count + 1;
-						handleCountChange(newCount);
+						handleCountChange(prev => prev + 1);
 					}}
 				>
 					<img src={plusIcon} alt='icon minus to increase the amount' />
@@ -47,11 +45,11 @@ function Counter({children}:CounterProps) {
 			<button
 				className='mt-4 text-very-dark-blue text-xl bg-main-orange p-4 rounded-xl font-bold flex justify-center items-center gap-4 w-full'
 				onClick={() => {
-					sendToCart(count);
+					sendToCart(count, productId, calcPrice, calcUnitPriceDiscount);
 				}}
 			>
 				<IoCartOutline />
-				<p>Add to cart</p>
+				<p>Add to Cart</p>
 			</button>
 		</>
 	);
