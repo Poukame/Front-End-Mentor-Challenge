@@ -19,3 +19,9 @@ export interface IProductData {
 		imageUrl: string,
 		thumbUrl: string,
 }
+
+export interface IProductsCarts extends IProductData {
+	total?: number,
+	count?: number,
+	calcUnitPriceDiscount?: number
+}

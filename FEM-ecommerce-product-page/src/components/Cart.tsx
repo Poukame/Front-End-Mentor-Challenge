@@ -1,10 +1,11 @@
 import { RiDeleteBin6Line } from 'react-icons/ri';
-import thumb from '../assets/image-product-1-thumbnail.jpg';
 import { useContext } from 'react';
 import { AppContext } from '../App';
 
 function Cart() {
-	const { isCart, cartItems } = useContext(AppContext);
+	const { cartItems, deleteFromCart } = useContext(AppContext);
+
+	const isEmpty = !cartItems.length
 
 	const renderCart = cartItems.map((el) => {
 		return (
@@ -19,7 +20,7 @@ function Cart() {
 					</span>{' '}
 					<span className='font-bold ml-4'>${el.total.toFixed(2)}</span>
 				</div>
-				<div className='row-span-2 col-start-12 row-start-1 text-dark-gray-blue place-self-center'>
+				<div className='row-span-2 col-start-12 row-start-1 text-dark-gray-blue place-self-center' onClick={() => deleteFromCart(el.id)}>
 					<RiDeleteBin6Line />
 				</div>
 			</div>
@@ -31,10 +32,10 @@ function Cart() {
 			<h3 className='font-bold p-4'>Cart</h3>
 			<hr />
 			<div className='flex flex-col flex-grow justify-start items-center p-4'>
-				{!isCart && <p className='font-bold text-dark-gray-blue my-auto'>Your cart is empty.</p>}
+				{isEmpty && <p className='font-bold text-dark-gray-blue my-auto'>Your cart is empty.</p>}
 
-				{isCart && renderCart}
-				{isCart && <button className='mt-6 bg-main-orange w-full rounded-lg py-3 font-bold'>Checkout</button>}
+				{!isEmpty && renderCart}
+				{!isEmpty && <button className='mt-6 bg-main-orange w-full rounded-lg py-3 font-bold'>Checkout</button>}
 			</div>
 		</div>
 	);

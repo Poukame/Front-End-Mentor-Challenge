@@ -4,6 +4,7 @@ import ProductDetails from './components/ProductDetails';
 import Cart from './components/Cart';
 import { useState, createContext } from 'react';
 import { productData } from './assets/productData';
+import { IProductsCarts } from './types';
 
 const initialValues = {
 	isCart: false,
@@ -20,8 +21,7 @@ export default function App() {
 	const [isMenu, setIsMenu] = useState(false);
 	const [isCart, setIsCart] = useState(false);
 	const [productIndex, setProductIndex] = useState(0);
-	const [cartItems, setCartItems] = useState([]);
-	console.log('cartItems:', cartItems);
+	const [cartItems, setCartItems] = useState<IProductsCarts[]>([]);
 
 	function changeProductIndex(param: 'minus' | 'plus') {
 		const maxIndex = productData.length;
@@ -30,6 +30,17 @@ export default function App() {
 			const newIndex = (productIndex + step + maxIndex) % maxIndex;
 			return newIndex;
 		});
+	}
+
+	function deleteFromCart(id:number) {
+		setCartItems(prev => {
+			if(prev.filter(el=> el.id !== id).length === 0) {
+				setIsCart(false)
+				return prev.filter(el=> el.id !== id)
+			} else {
+				return prev.filter(el=> el.id !== id)
+			}
+		})
 	}
 
 	function sendToCart(count: number, productId: number, calcPrice: number, calcUnitPriceDiscount:number) {
@@ -71,7 +82,7 @@ export default function App() {
 	return (
 		<div className='w-full h-screen'>
 			<div className='md:max-w-screen-lg mx-auto'>
-				<AppContext.Provider value={{ isCart, sendToCart, isMenu, productIndex, changeProductIndex, productData, cartItems }}>
+				<AppContext.Provider value={{ isCart, sendToCart, isMenu, productIndex, changeProductIndex, productData, cartItems, deleteFromCart }}>
 					<Header setToggleMenu={() => setIsMenu(!isMenu)} setIsCart={() => setIsCart(!isCart)} />
 					<ProductDisplay>
 						<Cart />
