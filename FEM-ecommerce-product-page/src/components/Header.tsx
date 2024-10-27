@@ -8,9 +8,9 @@ import { useContext } from 'react';
 import { AppContext } from '../App';
 
 function Header({ setToggleMenu, setIsCart }: IPropsHeader) {
-	const { isMenu, cartItems } = useContext(AppContext);
+	const { isMenu, cartItems, cartIconRef } = useContext(AppContext) ?? {};
 	
-	const nbItemsInCart = cartItems.reduce((acc:number, cur) => {
+	const nbItemsInCart = cartItems.reduce((acc, cur) => {
 			acc += cur.count
 			return acc
 		},0)
@@ -25,14 +25,14 @@ function Header({ setToggleMenu, setIsCart }: IPropsHeader) {
 	];
 	const navHTML = navItems.map(({ nav, link }) => {
 		return (
-			<a href={link} key={nav}>
+			<a href={link} key={nav} className='text-dark-gray-blue hover:text-black hover:underline hover:underline-offset-8 hover:decoration-main-orange hover:decoration-2'>
 				<li>{nav}</li>
 			</a>
 		);
 	});
 
 	return (
-		<div className='flex items-center bg-white px-4 lg:px-0 py-5 justify-between'>
+		<div className='border-b-2 flex items-center bg-white px-4 lg:px-0 py-4 justify-between'>
 			<div className='flex gap-4 items-baseline md:items-center'>
 				<button className='md:hidden' onClick={() => setToggleMenu()}>
 					<img className='w-5 h-5 ' src={menuIcon} alt='click to display the menu' />
@@ -59,7 +59,8 @@ function Header({ setToggleMenu, setIsCart }: IPropsHeader) {
 			)}
 			<div className='flex items-center gap-6'>
 				<button
-					className='relative flex justify-center items-center text-3xl text-black'
+				ref={cartIconRef}
+					className='cartbtn relative flex justify-center items-center text-3xl text-black'
 					aria-label='click to access your cart.'
 					onClick={() => {
 						setIsCart();
@@ -72,8 +73,8 @@ function Header({ setToggleMenu, setIsCart }: IPropsHeader) {
 						</div>
 					</span>
 				</button>
-				<button aria-label='click to access your account.'>
-					<img className='h-10 w-10' src={avatar} alt='avatar icon to access your account' />
+				<button className='rounded-full border-transparent hover:border-main-orange border-2' aria-label='click to access your account.'>
+					<img className='h-10 w-10 ' src={avatar} alt='avatar icon to access your account' />
 				</button>
 			</div>
 		</div>

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { AppContext } from '../App';
 
 function Cart() {
-	const { cartItems, deleteFromCart } = useContext(AppContext);
+	const { cartRef, cartItems, deleteFromCart } = useContext(AppContext) ?? {};
 
 	const isEmpty = !cartItems.length
 
@@ -28,7 +28,7 @@ function Cart() {
 	});
 
 	return (
-		<div className='flex flex-col bg-white w-11/12 min-h-72 rounded-xl absolute top-2'>
+		<div ref={cartRef} className='flex flex-col bg-white lg:w-96 w-11/12 min-h-72 rounded-xl absolute top-2 sm:right-0 sm:-top-4 sm:shadow-md'>
 			<h3 className='font-bold p-4'>Cart</h3>
 			<hr />
 			<div className='flex flex-col flex-grow justify-start items-center p-4'>

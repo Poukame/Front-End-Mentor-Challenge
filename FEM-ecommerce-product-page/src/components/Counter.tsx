@@ -9,7 +9,7 @@ function Counter({children, calcPrice, productId, calcUnitPriceDiscount}:Counter
 	const { sendToCart, productIndex } = useContext(AppContext);
 	const [count, setCount] = useState(1);
 
-	const handleCountChange = (newCount:number):void => {
+	const handleCountChange = (newCount:number) => {
 		setCount(newCount);
 		if (typeof children === 'function') {
 			children(newCount);
@@ -22,10 +22,10 @@ function Counter({children, calcPrice, productId, calcUnitPriceDiscount}:Counter
 	}, [productIndex])
 
 	return (
-		<>
-			<div className='flex mt-6 justify-between items-center bg-light-gray-blue  rounded-xl'>
+		<div className='lg:flex lg:justify-between lg:gap-4 lg:mt-8'>
+			<div className='flex lg:w-1/3 mt-6 lg:mt-0 justify-between items-center bg-light-gray-blue rounded-xl'>
 				<button
-					className='p-6'
+					className='p-6 hover:opacity-50'
 					onClick={() => {
 						handleCountChange(count - 1 < 1 ? 1 : count - 1);
 					}}
@@ -34,16 +34,16 @@ function Counter({children, calcPrice, productId, calcUnitPriceDiscount}:Counter
 				</button>
 				<p className='font-bold text-xl'>{count}</p>
 				<button
-					className='p-6'
+					className='p-6 hover:opacity-50'
 					onClick={() => {
-						handleCountChange(prev => prev + 1);
+						handleCountChange(count + 1);
 					}}
 				>
 					<img src={plusIcon} alt='icon minus to increase the amount' />
 				</button>
 			</div>
 			<button
-				className='mt-4 text-very-dark-blue text-xl bg-main-orange p-4 rounded-xl font-bold flex justify-center items-center gap-4 w-full'
+				className='mt-4 lg:mt-0 lg:flex-grow text-very-dark-blue text-xl bg-main-orange hover:bg-main-pale-orange p-4 rounded-xl font-bold flex justify-center items-center gap-4 w-full lg:w-fit'
 				onClick={() => {
 					sendToCart(count, productId, calcPrice, calcUnitPriceDiscount);
 				}}
@@ -51,7 +51,7 @@ function Counter({children, calcPrice, productId, calcUnitPriceDiscount}:Counter
 				<IoCartOutline />
 				<p>Add to Cart</p>
 			</button>
-		</>
+		</div>
 	);
 }
 

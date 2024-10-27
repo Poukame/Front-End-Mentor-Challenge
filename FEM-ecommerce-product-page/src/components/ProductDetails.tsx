@@ -3,7 +3,7 @@ import { AppContext } from '../App';
 import Counter from './Counter';
 
 function ProductDetails() {
-	const { productIndex, productData } = useContext(AppContext);
+	const { productIndex, productData } = useContext(AppContext) ?? {};
 	// get the value of count with render props
 	const [countFromCounter, setCountFromCounter] = useState(1);
 
@@ -13,7 +13,7 @@ function ProductDetails() {
 	const regularTotalPrice = regularPrice * countFromCounter;
 
 	return (
-		<div className='p-6'>
+		<div className='p-6 lg:px-0 max-w-lg mx-auto'>
 			<p className='uppercase text-dark-gray-blue font-bold text-sm'>{brand}</p>
 			<h2 className='mt-4 font-bold text-4xl capitalize'>{name}</h2>
 			<p className='mt-4 text-dark-gray-blue leading-6'>{description}</p>
@@ -29,7 +29,7 @@ function ProductDetails() {
 				)}
 			</div>
 			<Counter calcPrice={calcPrice} productId={id} calcUnitPriceDiscount={calcUnitPriceDiscount} >
-				{(countFromCounter: number) => {
+				{(countFromCounter) => {
 					setCountFromCounter(countFromCounter);
 					return <></>;
 				}}

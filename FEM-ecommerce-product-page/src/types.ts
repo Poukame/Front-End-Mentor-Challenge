@@ -1,13 +1,19 @@
 // Props
 export interface IPropsHeader {setToggleMenu:()=>void, setIsCart:()=> void}
-export type WithChildren<T = {}> = T & { children?: React.ReactNode };
 export interface CounterProps {
-	children: (newCount:number) => number,
+  children: (newCount:number) => React.ReactNode,
   calcPrice: number,
   productId: number,
   calcUnitPriceDiscount:number
   }
 
+export interface IProductDisplayProps {
+	children?: React.ReactNode,
+	height?: number,
+	width?: number,
+}
+
+//Data Types
 export interface IProductData {
 		id: number,
 		brand: string,
@@ -21,7 +27,24 @@ export interface IProductData {
 }
 
 export interface IProductsCarts extends IProductData {
-	total?: number,
-	count?: number,
-	calcUnitPriceDiscount?: number
+	total: number,
+	count: number,
+	calcUnitPriceDiscount: number
 }
+
+
+// App Context Init
+export interface IAppContext {
+	isCart: boolean;
+	sendToCart: (count: number, productId: number, calcPrice: number, calcUnitPriceDiscount: number) => void;
+	isMenu: boolean;
+	productIndex: number;
+	changeProductIndex: (param: 'plus' | 'minus') => void;
+	productData: IProductData[];
+	cartItems: IProductsCarts[];
+	deleteFromCart: (id: number) => void;
+	cartRef: React.MutableRefObject<HTMLDivElement | null>;
+	cartIconRef: React.MutableRefObject<HTMLButtonElement | null>;
+	toggleLightBox: boolean;
+	toggleLightBoxFn: () => void;
+  }

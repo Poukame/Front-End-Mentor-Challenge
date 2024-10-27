@@ -26,6 +26,7 @@ Users should be able to:
 - TypeScript
 - Tailwind CSS
 - Vite
+- React Icons
 - Mobile-first workflow
 
 ## Author
