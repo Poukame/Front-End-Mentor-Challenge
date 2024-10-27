@@ -31,14 +31,14 @@ function ProductDisplay({ children, height = 320, width = 400}: IProductDisplayP
 	});
 
 	return (
-		<div className='relative flex flex-col gap-4 flex-grow sm:mt-4'>
+		<div className='flex flex-col gap-4 flex-grow sm:mt-4'>
 			<div
 				style={{
 					backgroundImage: `url(${productData[productIndex].imageUrl})`,
 					'--min-h': `${height}px`,
 					'--min-w': `${width}px`,
 				}}
-				className='max-w-xl mx-auto lg:relative flex bg-cover lg:rounded-xl bg-top bg-no-repeat min-h-80 lg:min-h-[var(--min-h)] px-4 items-center lg:min-w-[var(--min-w)] min-w-full sm:min-w-[460px]'
+				className='max-w-xl mx-auto relative md:static flex bg-cover lg:rounded-xl bg-top bg-no-repeat min-h-80 lg:min-h-[var(--min-h)] px-4 items-center lg:min-w-[var(--min-w)] min-w-full sm:min-w-[460px]'
 				onClick={() => toggleLightBoxFn()}
 			>
 				{toggleLightBox && (

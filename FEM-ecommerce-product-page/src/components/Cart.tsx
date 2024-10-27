@@ -28,7 +28,7 @@ function Cart() {
 	});
 
 	return (
-		<div ref={cartRef} className='flex flex-col bg-white lg:w-96 w-11/12 min-h-72 rounded-xl absolute top-2 sm:right-0 sm:-top-4 sm:shadow-md'>
+		<div ref={cartRef} className='flex flex-col bg-white md:w-96 w-11/12 min-h-72 rounded-xl absolute top-2 md:right-0 md:-top-4 md:shadow-md'>
 			<h3 className='font-bold p-4'>Cart</h3>
 			<hr />
 			<div className='flex flex-col flex-grow justify-start items-center p-4'>

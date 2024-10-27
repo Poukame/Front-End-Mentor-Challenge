@@ -2,6 +2,11 @@
 
 This is a solution to the [E-commerce product page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ecommerce-product-page-UPsZ9MJp6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
+### Notes
+
+I dont't know why but I misunderstood the project. I thought there was 4 product instead of one. When I realized I had already built most of the logic and decided to keep it that way.
+Therefore I created a data file with mock data to pretend there are 4 products.
+
 ### The challenge
 
 Users should be able to:
@@ -16,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://illustrious-mermaid-7e9284.netlify.app)
+- Live Site URL: [Add live site URL here](https://chic-rabanadas-9af473.netlify.app)
 
 ## My process
 
