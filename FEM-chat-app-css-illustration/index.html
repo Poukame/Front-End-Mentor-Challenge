@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>FEM chat</title>
+	</head>
+	<body class="relative mx-auto flex max-w-3xl flex-col justify-center bg-app-bg px-8">
+		<div
+			class="absolute left-0 top-0 -z-10 h-[50vh] w-full -translate-x-1/2 rounded-b-full bg-gradient-to-t from-gradient-end to-gradient-start"
+		></div>
+		<div class="mt-16 rounded-3xl bg-white p-3 shadow-lg">
+			<div class="overflow-clip rounded-t-2xl bg-gradient-to-r from-gradient-end to-gradient-start">Samuel Green</div>
+			<div class="flex flex-col gap-3 rounded-2xl bg-gray-50 p-2">
+				<div class="w-7/12 self-start rounded-xl bg-gray-200 bg-opacity-50 p-2 text-xs text-violet-moderate shadow-sm">
+					That sound great. I'd be happy to discuss more.
+				</div>
+				<div class="w-7/12 self-start rounded-xl bg-gray-200 bg-opacity-50 p-2 text-xs text-violet-moderate shadow-sm">
+					Could you send over some pictures of your dog, please?
+				</div>
+				<div class="max-w-7/12 self-end rounded-xl bg-white p-2 text-xs text-slate-600">
+					<div class="flex justify-end gap-2">
+						<img class="h-12 w-12 rounded-xl" src="./public/dog-image-1.jpg" alt="dog with tongue out" />
+						<img class="h-12 w-12 rounded-xl" src="./public/dog-image-2.jpg" alt="dog crouched on the floor" />
+						<img class="h-12 w-12 rounded-xl" src="./public/dog-image-3.jpg" alt="dog with a branch in the mouth" />
+					</div>
+				</div>
+				<div class="w-7/12 self-end rounded-xl bg-white p-2 text-xs text-slate-600 shadow-sm">
+					Here are a few pictures. She’s a happy girl!
+				</div>
+				<div class="w-7/12 self-end rounded-xl bg-white p-2 text-xs text-slate-600 shadow-sm">Can you make it?</div>
+				<div class="w-7/12 self-start rounded-xl bg-gray-200 bg-opacity-50 p-2 text-xs text-violet-moderate shadow-sm">
+					She looks so happy! The time we discussed works. How long shall I take her out for?
+				</div>
+				<div
+					class="w-7/12 self-start rounded-xl bg-gradient-to-l from-gradient-end to-gradient-start p-2 text-xs shadow-sm"
+				>
+					30 minute walk $29
+				</div>
+				<div
+					class="w-7/12 self-start rounded-xl bg-gradient-to-l from-gradient-end to-gradient-start p-2 text-xs shadow-sm"
+				>
+					1 hour walk $49
+				</div>
+				<div class="relative flex flex-row-reverse py-2 pl-4 items-center">
+					<div
+						class="absolute mr-1 flex h-7 w-7 items-center justify-center rounded-full bg-slate-900 text-xl font-semibold text-white"
+					>
+						>
+					</div>
+					<input class="w-full rounded-full p-2 text-sm" type="text" placeholder="Type a message…" />
+				</div>
+			</div>
+		</div>
+
+		<main class="text-center">
+			<h2 class="mt-14 text-4xl font-semibold text-slate-700">Simple booking</h2>
+			<p class="mt-6 text-violet-dark">
+				Stay in touch with our dog walkers through the chat interface. This makes it easy to discuss arrangements and
+				make bookings. Once the walk has been completed you can rate your walker and book again all through the chat.
+			</p>
+		</main>
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>

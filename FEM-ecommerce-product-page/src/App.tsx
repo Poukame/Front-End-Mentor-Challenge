@@ -28,12 +28,12 @@ export default function App() {
 	const cartIconRef = useRef<HTMLButtonElement | null>(null);
 	const [isMenu, setIsMenu] = useState(false);
 	const [isCart, setIsCart] = useState(false);
-	const [toggleLightBox, setToggleLightBox] = useState(false)
+	const [toggleLightBox, setToggleLightBox] = useState(false);
 	const [productIndex, setProductIndex] = useState(0);
 	const [cartItems, setCartItems] = useState<IProductsCarts[]>([]);
 
 	useEffect(() => {
-		const handleClickOutside = (event:MouseEvent) => {
+		const handleClickOutside = (event: MouseEvent) => {
 			if (
 				cartRef.current &&
 				!cartRef.current.contains(event.target as Node) &&
@@ -73,7 +73,6 @@ export default function App() {
 		});
 	}
 
-
 	function sendToCart(count: number, productId: number, calcPrice: number, calcUnitPriceDiscount: number) {
 		setCartItems((prev) => {
 			const existingCartItem = prev.find((el) => el.id === productId);
@@ -108,9 +107,9 @@ export default function App() {
 			return [...prev, newProduct];
 		});
 	}
- 
+
 	function toggleLightBoxFn() {
-		setToggleLightBox(!toggleLightBox)
+		setToggleLightBox(!toggleLightBox);
 	}
 
 	return (
@@ -129,10 +128,10 @@ export default function App() {
 						cartRef,
 						cartIconRef,
 						toggleLightBox,
-						toggleLightBoxFn
+						toggleLightBoxFn,
 					}}
 				>
-					{toggleLightBox && <LightBox/>}
+					{toggleLightBox && <LightBox />}
 					<Header setToggleMenu={() => setIsMenu(!isMenu)} setIsCart={() => setIsCart(!isCart)} />
 					<LayoutWrapper>
 						<ProductDisplay>

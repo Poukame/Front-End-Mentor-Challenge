@@ -22,7 +22,7 @@ Users should be able to:
 
 - React
 - TypeScript
-- Tailwind CSS
+- Tailwind CSSr
 - Vite
 - React Icons
 - Mobile-first workflow
