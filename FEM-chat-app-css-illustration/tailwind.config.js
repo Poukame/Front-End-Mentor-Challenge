@@ -22,7 +22,22 @@ export default {
         'gradient-start': 'hsl(293, 100%, 63%)',
         'gradient-end': 'hsl(264, 100%, 61%)',
       },
+      keyframes: {
+        slideInLeft: {
+          '0%': { transform: 'translateX(-30%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        slideInRight: {
+          '0%': { transform: 'translateX(20%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+      },
+      animation: {
+        slideInLeft: 'slideInLeft 500ms ease-in',
+        slideInRight: 'slideInRight 500ms ease-in',
+      },
     },
+    
   },
   plugins: [],
 }
