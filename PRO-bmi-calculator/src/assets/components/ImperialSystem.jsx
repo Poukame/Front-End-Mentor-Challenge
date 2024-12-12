@@ -28,10 +28,9 @@ export default function ImperialSystem({ unitSystem }) {
 		};
 	}, [heightFieldFeet, heightFieldInch, weightFieldStone, weightFieldPounds]);
 
-
 	return (
-		<>
-			<div className='mx-auto'>
+		<div className='sm:col-span-2 sm:row-start-3 sm:grid sm:grid-cols-subgrid sm:grid-rows-2'>
+			<div className='mx-auto sm:col-span-2'>
 				<label htmlFor='height' className='mb-3 block text-sm text-main-dark-blue'>
 					Height
 				</label>
@@ -72,7 +71,7 @@ export default function ImperialSystem({ unitSystem }) {
 					</div>
 				</div>
 			</div>
-			<div className='mx-auto max-w-xs'>
+			<div className='mx-auto sm:col-span-2'>
 				<label htmlFor='weight-metric' className='mb-3 block text-sm text-main-dark-blue'>
 					Weight
 				</label>
@@ -114,6 +113,6 @@ export default function ImperialSystem({ unitSystem }) {
 				</div>
 			</div>
 			<ResultDisplay unitSystem={unitSystem} height={debouncedHeight} weight={debouncedWeight} />
-		</>
+		</div>
 	);
 }

@@ -8,8 +8,8 @@ import ageIcon from '../images/icon-age.svg';
 
 export function LimitationsCards() {
 	return (
-		<div className='limitations-cards-container mb-24 flex flex-col gap-8 px-6'>
-			<div className='card shadow-card relative z-10 rounded-2xl bg-white p-6'>
+		<div className='limitations-cards-container mb-24 grid grid-cols-12 gap-8 px-6'>
+			<div className='card relative z-10 col-span-12 rounded-2xl bg-white p-6 shadow-card'>
 				<div className='mb-4 flex items-center gap-4'>
 					<img src={genderIcon} alt='' />
 					<Heading level='4'>Gender</Heading>
@@ -19,7 +19,7 @@ export function LimitationsCards() {
 					gender are considered when evaluating their BMI.
 				</Body>
 			</div>
-			<div className='card shadow-card relative z-10 rounded-2xl bg-white p-6'>
+			<div className='card relative z-10 col-span-12 rounded-2xl bg-white p-6 shadow-card'>
 				<div className='mb-4 flex items-center gap-4'>
 					<img src={ageIcon} alt='' />
 					<Heading level='4'>Age</Heading>
@@ -28,7 +28,7 @@ export function LimitationsCards() {
 					In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content.
 				</Body>
 			</div>
-			<div className='card shadow-card relative z-10 rounded-2xl bg-white p-6'>
+			<div className='card relative z-10 col-span-12 rounded-2xl bg-white p-6 shadow-card'>
 				<div className='mb-4 flex items-center gap-4'>
 					<img src={muscleIcon} alt='' />
 					<Heading level='4'>Muscle</Heading>
@@ -37,7 +37,7 @@ export function LimitationsCards() {
 					BMI may misclassify muscular individuals as overweight or obese, as it doesn't differentiate muscle from fat.
 				</Body>
 			</div>
-			<div className='card shadow-card relative z-10 rounded-2xl bg-white p-6'>
+			<div className='card relative z-10 col-span-12 rounded-2xl bg-white p-6 shadow-card'>
 				<div className='mb-4 flex items-center gap-4'>
 					<img src={pregnancyIcon} alt='' />
 					<Heading level='4'>Pregnancy</Heading>
@@ -47,7 +47,7 @@ export function LimitationsCards() {
 					advisable to minimise health risks for both mother and child.
 				</Body>
 			</div>
-			<div className='card shadow-card relative z-10 rounded-2xl bg-white p-6'>
+			<div className='card relative z-10 col-span-12 rounded-2xl bg-white p-6 shadow-card'>
 				<div className='mb-4 flex items-center gap-4'>
 					<img src={raceIcon} alt='' />
 					<Heading level='4'>Race</Heading>

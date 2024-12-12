@@ -12,13 +12,13 @@ export default function Calculator() {
 	const [selectedUnit, setSelectedUnit] = useState('metric');
 
 	return (
-		<div className='flex w-full flex-col items-center p-6'>
-			<div className='max-w-xs rounded-xl bg-yellow-100 p-6'>
-				<Heading level='3' className='mb-0'>
+		<div className='-mb-48 flex w-full -translate-y-56 flex-col items-center p-6'>
+			<div className='sm:grid-rows-auto max-w-xs rounded-xl bg-white p-6 shadow-card sm:grid sm:max-w-full sm:grid-cols-2'>
+				<Heading level='3' className='mb-0 sm:col-span-2'>
 					Enter your details below
 				</Heading>
-				<fieldset>
-					<div className='my-6 flex justify-between gap-8'>
+				<fieldset className='sm:col-span-2 sm:row-start-2 sm:row-end-3'>
+					<div className='my-6 flex justify-between gap-8 sm:justify-evenly'>
 						{units.map((el) => (
 							<div key={el.id} className='flex items-center'>
 								<input
@@ -38,9 +38,11 @@ export default function Calculator() {
 						))}
 					</div>
 				</fieldset>
-				{selectedUnit === 'metric' ? <MetricSystem unitSystem = {selectedUnit} /> : <ImperialSystem unitSystem = {selectedUnit} />}
-
-
+				{selectedUnit === 'metric' ? (
+					<MetricSystem unitSystem={selectedUnit} />
+				) : (
+					<ImperialSystem unitSystem={selectedUnit} />
+				)}
 			</div>
 		</div>
 	);

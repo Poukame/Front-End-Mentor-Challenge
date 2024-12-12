@@ -9,7 +9,7 @@ import Calculator from './assets/components/Calculator';
 export function App() {
 	return (
 		<main className='flex flex-col items-center justify-center font-inter'>
-			<section className='bg-gradient-to-l from-[#d6e6fe8e] to-[#d6fcfe15] px-6 rounded-b-[35px]'>
+			<section className='rounded-b-[35px] bg-gradient-to-l from-[#d6e6fe8e] to-[#d6fcfe15] px-6 pb-64'>
 				<Logo width={'40px'} />
 				<Heading level='1'>
 					body mass
@@ -22,23 +22,25 @@ export function App() {
 					health and well-being.
 				</Body>
 			</section>
-				<Calculator />
-			<img className='mb-12' src={manEating} alt='man smiling holding a sushi with chopsticks' />
-			<section className='px-6'>
-				<Heading level='2'>What your BMI resuslt means</Heading>
-				<Body className='mb-16'>
-					A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a healthy weight may lower your
-					chances of experiencing health issues later on, such as obesity and type 2 diabetes. Aim for a nutritious diet
-					with reduced fat and sugar content, incorporating ample fruits and vegetables. Additionally, strive for
-					regular physical activity, ideally about 30 minutes daily for five days a week.
-				</Body>
-			</section>
+			<Calculator />
+			<div className='sm:flex sm:gap-2 sm:items-start'>
+				<img className='mb-12 sm:mb-20 sm:max-w-[40%] sm:aspect-auto sm:-translate-x-10' src={manEating} alt='man smiling holding a sushi with chopsticks' />
+				<section className='px-6'>
+					<Heading level='2'>What your BMI resuslt means</Heading>
+					<Body className='mb-16'>
+						A BMI range of 18.5 to 24.9 is considered a 'healthy weight.' Maintaining a healthy weight may lower your
+						chances of experiencing health issues later on, such as obesity and type 2 diabetes. Aim for a nutritious
+						diet with reduced fat and sugar content, incorporating ample fruits and vegetables. Additionally, strive for
+						regular physical activity, ideally about 30 minutes daily for five days a week.
+					</Body>
+				</section>
+			</div>
 			<HealthCards />
 			<section className='mb-14 px-6 pt-16'>
 				<Heading level='2' className='text-center'>
 					Limitations of BMI
 				</Heading>
-				<Body>
+				<Body className='sm:text-center'>
 					Although BMI is often a practical indicator of healthy weight, it is not suited for every person. Specific
 					groups should carefully consider their BMI outcomes, and in certain cases, the measurement may not be
 					beneficial to use.

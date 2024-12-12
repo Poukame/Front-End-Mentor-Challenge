@@ -19,20 +19,26 @@ export default function ResultDisplay({ unitSystem = 'metric', height, weight })
 	);
 
 	const resultMessage = (
-		<p>
-			Your BMI is...<br></br>
-			<span className='text-4xl font-semibold'>{BMI}</span>
-			<br></br>
-			Your BMI suggests you’re a {BMIrange}. Your ideal weight is between{' '}
-			<strong>
-				{unitSystem === 'metric'
-					? `${healthyRangeMin}kgs - ${healthyRangeMax}kgs`
-					: `${healthyRangeMinStones}st ${healthyRangeMinPounds}lbs - ${healthyRangeMaxStones}st ${healthyRangeMaxPounds}lbs`}
-			</strong>
-		</p>
+		<div className='sm:grid sm:grid-cols-2'>
+			<p>
+				Your BMI is...<br></br>
+				<span className='text-4xl font-semibold'>{BMI}</span>
+				<br></br>
+			</p>
+			<p>
+				Your BMI suggests you’re a {BMIrange}. Your ideal weight is between{' '}
+				<strong>
+					{unitSystem === 'metric'
+						? `${healthyRangeMin}kgs - ${healthyRangeMax}kgs`
+						: `${healthyRangeMinStones}st ${healthyRangeMinPounds}lbs - ${healthyRangeMaxStones}st ${healthyRangeMaxPounds}lbs`}
+				</strong>
+			</p>
+		</div>
 	);
 
 	return (
-		<div className='rounded-xl bg-main-blue p-8 text-white'>{height && weight ? resultMessage : promptMessage}</div>
+		<div className='rounded-xl bg-main-blue p-8 text-white sm:col-span-2 sm:row-start-4 sm:row-end-5 sm:rounded-r-full'>
+			{height && weight ? resultMessage : promptMessage}
+		</div>
 	);
 }
