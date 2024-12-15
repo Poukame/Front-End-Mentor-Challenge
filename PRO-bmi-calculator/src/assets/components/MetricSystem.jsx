@@ -38,7 +38,7 @@ export default function MetricSystem({ unitSystem }) {
 								onChange={(e) => setHeightField(e.target.value)}
 								placeholder='0'
 								aria-describedby='height in centimeters'
-								className='block min-w-0 font-semibold text-main-gunmetal placeholder:text-gray-400 focus:outline focus:outline-0'
+								className='block min-w-0 font-semibold text-main-gunmetal [appearance:textfield] placeholder:text-gray-400 focus:outline focus:outline-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 							/>
 							<div id='height-unit' className='shrink-1 select-none font-semibold tracking-tighter text-main-blue'>
 								cm
@@ -60,7 +60,7 @@ export default function MetricSystem({ unitSystem }) {
 								onChange={(e) => setWeightField(e.target.value)}
 								placeholder='0'
 								aria-describedby='weight in kilos'
-								className='block min-w-0 font-semibold text-main-gunmetal placeholder:text-gray-400 focus:outline focus:outline-0'
+								className='block min-w-0 font-semibold text-main-gunmetal [appearance:textfield] placeholder:text-gray-400 focus:outline focus:outline-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 							/>
 							<div id='height-unit' className='shrink-1 select-none font-semibold tracking-tighter text-main-blue'>
 								kg

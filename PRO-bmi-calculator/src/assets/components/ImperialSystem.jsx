@@ -45,7 +45,7 @@ export default function ImperialSystem({ unitSystem }) {
 								onChange={(e) => setHeightFieldFeet(e.target.value)}
 								placeholder='0'
 								aria-describedby='height in feet'
-								className='block w-1/2 min-w-0 font-semibold text-main-gunmetal placeholder:text-gray-400 focus:outline focus:outline-0'
+								className='block w-1/2 min-w-0 font-semibold text-main-gunmetal [appearance:textfield] placeholder:text-gray-400 focus:outline focus:outline-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 							/>
 							<div id='height-unit' className='shrink-1 select-none font-semibold tracking-tighter text-main-blue'>
 								ft
@@ -62,7 +62,7 @@ export default function ImperialSystem({ unitSystem }) {
 								onChange={(e) => setHeightFieldInch(e.target.value)}
 								placeholder='0'
 								aria-describedby='height in inches'
-								className='block w-1/2 min-w-0 font-semibold text-main-gunmetal placeholder:text-gray-400 focus:outline focus:outline-0'
+								className='block w-1/2 min-w-0 font-semibold text-main-gunmetal [appearance:textfield] placeholder:text-gray-400 focus:outline focus:outline-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 							/>
 							<div id='height-unit' className='shrink-1 select-none font-semibold tracking-tighter text-main-blue'>
 								in
@@ -86,7 +86,7 @@ export default function ImperialSystem({ unitSystem }) {
 								onChange={(e) => setWeightFieldStone(e.target.value)}
 								placeholder='0'
 								aria-describedby='height in stones'
-								className='block w-1/2 min-w-0 font-semibold text-main-gunmetal placeholder:text-gray-400 focus:outline focus:outline-0'
+								className='block w-1/2 min-w-0 font-semibold text-main-gunmetal [appearance:textfield] placeholder:text-gray-400 focus:outline focus:outline-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 							/>
 							<div id='height-unit' className='shrink-1 select-none font-semibold tracking-tighter text-main-blue'>
 								st
@@ -103,7 +103,7 @@ export default function ImperialSystem({ unitSystem }) {
 								onChange={(e) => setWeightFieldPounds(e.target.value)}
 								placeholder='0'
 								aria-describedby='height in pounds'
-								className='block w-1/2 min-w-0 font-semibold text-main-gunmetal placeholder:text-gray-400 focus:outline focus:outline-0'
+								className='block w-1/2 min-w-0 font-semibold text-main-gunmetal [appearance:textfield] placeholder:text-gray-400 focus:outline focus:outline-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none'
 							/>
 							<div id='height-unit' className='shrink-1 select-none font-semibold tracking-tighter text-main-blue'>
 								lbs

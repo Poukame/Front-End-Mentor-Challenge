@@ -12,7 +12,7 @@ export default function Calculator() {
 	const [selectedUnit, setSelectedUnit] = useState('metric');
 
 	return (
-		<div className='-mb-48 flex w-full -translate-y-56 flex-col items-center p-6'>
+		<div className='-mb-48 lg:-mb-[450px] flex w-full -translate-y-56 lg:-translate-y-[540px] lg:translate-x-72 flex-col items-center p-6 lg:max-w-xl'>
 			<div className='sm:grid-rows-auto max-w-xs rounded-xl bg-white p-6 shadow-card sm:grid sm:max-w-full sm:grid-cols-2'>
 				<Heading level='3' className='mb-0 sm:col-span-2'>
 					Enter your details below
