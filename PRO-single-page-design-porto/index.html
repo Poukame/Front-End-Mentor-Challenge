@@ -37,37 +37,37 @@
 				<div
 					class="col-span-12 flex flex-col justify-between gap-24 rounded-lg bg-sec-blue p-6 md:col-span-6 md:row-span-6 lg:col-span-4 lg:row-span-2"
 				>
-					<img src="./src/assets/pattern-graphic-design.svg" class="w-32 self-end" alt="" />
+					<img src="./src/assets/pattern-graphic-design.svg" class="w-32 self-end" alt="" aria-hidden="true" />
 					<p class="text-2xl font-bold text-main-white">Graphic Design</p>
 				</div>
 				<div
 					class="col-span-6 flex flex-col justify-between gap-10 rounded-lg bg-sec-orange p-6 md:col-span-3 md:row-span-3 lg:col-span-2 lg:row-span-1"
 				>
-					<img src="./src/assets/pattern-ui-ux.svg" class="w-32 self-end" alt="" />
+					<img src="./src/assets/pattern-ui-ux.svg" class="w-32 self-end" alt="" aria-hidden="true" />
 					<p class="text-2xl font-bold text-main-white">UI/UX</p>
 				</div>
 				<div
 					class="col-span-6 flex flex-col justify-between gap-10 rounded-lg bg-sec-pink p-6 md:col-span-3 md:row-span-3 lg:col-span-2 lg:row-span-1"
 				>
-					<img src="./src/assets/pattern-apps.svg" class="w-32 self-end" alt="" />
+					<img src="./src/assets/pattern-apps.svg" class="w-32 self-end" alt="" aria-hidden="true" />
 					<p class="text-2xl font-bold text-main-white">Apps</p>
 				</div>
 				<div
 					class="col-span-12 flex flex-col justify-between gap-10 rounded-lg bg-main-red p-6 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-1"
 				>
-					<img src="./src/assets/pattern-illustrations.svg" class="w-32 self-end" alt="" />
+					<img src="./src/assets/pattern-illustrations.svg" class="w-32 self-end" alt="" aria-hidden="true" />
 					<p class="text-2xl font-bold text-main-white">Illustrations</p>
 				</div>
 				<div
 					class="col-span-12 flex flex-col justify-between gap-10 rounded-lg bg-sec-green p-6 md:col-span-6 md:row-span-6 lg:col-span-4 lg:col-start-9 lg:row-span-1 lg:row-start-1"
 				>
-					<img src="./src/assets/pattern-photography.svg" class="w-32 self-end" alt="" />
+					<img src="./src/assets/pattern-photography.svg" class="w-32 self-end" alt="" aria-hidden="true" />
 					<p class="text-2xl font-bold text-main-white">Photography</p>
 				</div>
 				<div
 					class="col-span-12 flex flex-col justify-between gap-10 rounded-lg bg-sec-purple p-6 md:col-span-6 md:row-span-6 lg:col-span-4 lg:row-span-1"
 				>
-					<img src="./src/assets/pattern-motion-graphics.svg" class="w-32 self-end" alt="" />
+					<img src="./src/assets/pattern-motion-graphics.svg" class="w-32 self-end" alt="" aria-hidden="true" />
 					<p class="text-2xl font-bold text-main-white">Motion Graphics</p>
 				</div>
 			</section>
@@ -93,28 +93,27 @@
 			<section class="slider-container mb-24">
 				<h2 class="mb-8 text-center text-2xl font-bold text-main-black md:text-3xl">My work</h2>
 				<!-- slider -->
-				<div id="slider" class="slider flex w-screen flex-shrink-0 justify-center gap-4"></div>
+				<div
+					id="slider"
+					aria-roledescription="carousel"
+					aria-label="Image slider"
+					class="slider flex w-screen flex-shrink-0 justify-center gap-4"
+				></div>
 				<!-- slider -->
 				<div class="mt-8 flex justify-center gap-4">
 					<button
 						id="btn-prev"
+						aria-label="Previous image"
 						class="flex h-16 w-16 items-center justify-center rounded-full bg-main-black hover:bg-sec-blue focus:bg-sec-blue"
 					>
-						<img
-							src="./src/assets/icon-arrow-left.svg"
-							aria-describedby="click to switch the carrousel to the left"
-							alt=""
-						/>
+						<img src="./src/assets/icon-arrow-left.svg" alt="left arrow" />
 					</button>
 					<button
 						id="btn-next"
+						aria-label="Next image"
 						class="flex h-16 w-16 items-center justify-center rounded-full bg-main-black hover:bg-sec-blue focus:bg-sec-blue"
 					>
-						<img
-							src="./src/assets/icon-arrow-right.svg"
-							aria-describedby="click to switch the carrousel to the right"
-							alt=""
-						/>
+						<img src="./src/assets/icon-arrow-right.svg" alt="right arrow" />
 					</button>
 				</div>
 			</section>
