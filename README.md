@@ -23,7 +23,7 @@ Use **ctrl + click** to open in a new tab.
 - 13 : [Calculator](https://celadon-cannoli-abb5d2.netlify.app)
 - 14 : [Chat App](https://chipper-pastelito-2f9edf.netlify.app/)
 - 15 : [BMI Calculator PRO](https://subtle-marigold-d893c0.netlify.app)
-- 16 : [Single Page Design Portofolio](https://spectacular-starburst-6a8622.netlify.app/)
+- 16 : [Single Page Design Portofolio](https://relaxed-dasik-dfe9fb.netlify.app/)
 
 
 
