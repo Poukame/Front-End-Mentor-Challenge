@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link href="./src/style.css" rel="stylesheet" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+			rel="stylesheet"
+		/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Single Page Design Portofolio</title>
+	</head>
+	<body class="mx-auto max-w-6xl p-4 font-jakarta md:p-9">
+		<header class="mb-8 flex flex-row justify-between md:mb-16">
+			<img
+				src="./src/assets/logo.svg"
+				class="w-12 md:w-16"
+				alt="logo of the company as a black square with a white circle inside"
+			/>
+			<button
+				class="rounded-full bg-main-black px-7 py-2 text-sm/7 font-bold text-main-white hover:bg-sec-blue focus:bg-sec-blue md:px-12 md:py-4 md:text-base/7"
+			>
+				Free Consultation
+			</button>
+		</header>
+		<main class="flex flex-col items-center justify-center">
+			<section class="mb-16 text-center md:max-w-2xl lg:max-w-4xl">
+				<h1 class="mb-4 mt-8 text-4xl font-bold text-main-black md:text-5xl lg:text-6xl">Design solutions made easy</h1>
+				<p class="px-8 text-base/7 text-sec-gray md:text-lg/7 lg:px-14">
+					With over ten years of experience in various design disciplines, I’m your one-stop shop for your design needs.
+				</p>
+			</section>
+			<section class="md:grid-rows-auto mb-24 grid w-full grid-cols-12 gap-6">
+				<div
+					class="col-span-12 flex flex-col justify-between gap-24 rounded-lg bg-sec-blue p-6 md:col-span-6 md:row-span-6 lg:col-span-4 lg:row-span-2"
+				>
+					<img src="./src/assets/pattern-graphic-design.svg" class="w-32 self-end" alt="" />
+					<p class="text-2xl font-bold text-main-white">Graphic Design</p>
+				</div>
+				<div
+					class="col-span-6 flex flex-col justify-between gap-10 rounded-lg bg-sec-orange p-6 md:col-span-3 md:row-span-3 lg:col-span-2 lg:row-span-1"
+				>
+					<img src="./src/assets/pattern-ui-ux.svg" class="w-32 self-end" alt="" />
+					<p class="text-2xl font-bold text-main-white">UI/UX</p>
+				</div>
+				<div
+					class="col-span-6 flex flex-col justify-between gap-10 rounded-lg bg-sec-pink p-6 md:col-span-3 md:row-span-3 lg:col-span-2 lg:row-span-1"
+				>
+					<img src="./src/assets/pattern-apps.svg" class="w-32 self-end" alt="" />
+					<p class="text-2xl font-bold text-main-white">Apps</p>
+				</div>
+				<div
+					class="col-span-12 flex flex-col justify-between gap-10 rounded-lg bg-main-red p-6 md:col-span-6 md:row-span-3 lg:col-span-4 lg:row-span-1"
+				>
+					<img src="./src/assets/pattern-illustrations.svg" class="w-32 self-end" alt="" />
+					<p class="text-2xl font-bold text-main-white">Illustrations</p>
+				</div>
+				<div
+					class="col-span-12 flex flex-col justify-between gap-10 rounded-lg bg-sec-green p-6 md:col-span-6 md:row-span-6 lg:col-span-4 lg:col-start-9 lg:row-span-1 lg:row-start-1"
+				>
+					<img src="./src/assets/pattern-photography.svg" class="w-32 self-end" alt="" />
+					<p class="text-2xl font-bold text-main-white">Photography</p>
+				</div>
+				<div
+					class="col-span-12 flex flex-col justify-between gap-10 rounded-lg bg-sec-purple p-6 md:col-span-6 md:row-span-6 lg:col-span-4 lg:row-span-1"
+				>
+					<img src="./src/assets/pattern-motion-graphics.svg" class="w-32 self-end" alt="" />
+					<p class="text-2xl font-bold text-main-white">Motion Graphics</p>
+				</div>
+			</section>
+			<section class="mb-24 grid grid-cols-1 gap-6 text-center md:grid-cols-2 md:text-left">
+				<img
+					class="mx-auto max-w-72 md:col-start-1 md:row-span-3 md:max-w-96 md:-translate-x-20 md:place-self-center lg:max-w-md lg:translate-x-0"
+					src="./src/assets/image-amy.webp"
+					alt="sample"
+				/>
+				<h2 class="text-2xl font-bold md:col-start-2 md:text-3xl lg:place-self-end">
+					I’m Amy, and I’d love to work on your next project
+				</h2>
+				<p class="text-base/7 text-sec-gray md:col-span-1 md:col-start-2 md:text-lg lg:place-self-center">
+					I love working with others to create beautiful design solutions. I’ve designed everything from brand
+					illustrations to complete mobile apps. I’m also handy with a camera!
+				</p>
+				<button
+					class="col-start-2 rounded-full bg-main-red px-7 py-2 text-sm/7 font-bold text-main-white hover:bg-sec-orange focus:bg-sec-orange md:w-9/12 md:px-11 md:py-3 md:text-base/7 lg:w-5/12 lg:place-self-start lg:px-9"
+				>
+					Free Consultation
+				</button>
+			</section>
+			<section class="slider-container mb-24">
+				<h2 class="mb-8 text-center text-2xl font-bold text-main-black md:text-3xl">My work</h2>
+				<!-- slider -->
+				<div id="slider" class="slider flex w-screen flex-shrink-0 justify-center gap-4"></div>
+				<!-- slider -->
+				<div class="mt-8 flex justify-center gap-4">
+					<button
+						id="btn-prev"
+						class="flex h-16 w-16 items-center justify-center rounded-full bg-main-black hover:bg-sec-blue focus:bg-sec-blue"
+					>
+						<img
+							src="./src/assets/icon-arrow-left.svg"
+							aria-describedby="click to switch the carrousel to the left"
+							alt=""
+						/>
+					</button>
+					<button
+						id="btn-next"
+						class="flex h-16 w-16 items-center justify-center rounded-full bg-main-black hover:bg-sec-blue focus:bg-sec-blue"
+					>
+						<img
+							src="./src/assets/icon-arrow-right.svg"
+							aria-describedby="click to switch the carrousel to the right"
+							alt=""
+						/>
+					</button>
+				</div>
+			</section>
+			<section
+				class="cta grid-rows-auto grid grid-cols-12 gap-6 rounded-lg bg-main-black px-6 py-12 text-center text-main-white md:gap-7 md:px-14 md:py-20 lg:text-left"
+			>
+				<h2 class="col-span-12 text-2xl font-bold md:text-3xl lg:col-span-7 lg:col-start-1 lg:row-start-1 lg:text-4xl">
+					Book a call with me
+				</h2>
+				<p class="col-span-12 md:text-lg lg:col-span-7 lg:col-start-1 lg:row-start-2">
+					I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project
+					during a free consultation. Then we can move forward from there.
+				</p>
+				<button
+					class="col-span-12 mx-auto w-8/12 rounded-full bg-main-red px-7 py-2 text-sm/7 font-bold text-main-white hover:bg-sec-orange focus:bg-sec-orange md:w-6/12 md:px-11 md:py-4 md:text-base/7 lg:col-span-5 lg:row-span-2 lg:row-start-1 lg:place-self-center lg:px-4"
+				>
+					Free consultation
+				</button>
+			</section>
+		</main>
+		<script type="text/javascript" src="./src/slider.js"></script>
+		<footer class="my-8 mb-8 flex flex-row justify-between md:mb-14 md:py-14">
+			<img
+				src="./src/assets/logo.svg"
+				class="w-12 md:w-16"
+				alt="logo of the company as a black square with a white circle inside"
+			/>
+			<button
+				class="rounded-full bg-main-black px-7 py-2 text-sm/7 font-bold text-main-white hover:bg-sec-blue focus:bg-sec-blue md:px-12 md:py-4 md:text-base/7"
+			>
+				Free Consultation
+			</button>
+		</footer>
+	</body>
+</html>
